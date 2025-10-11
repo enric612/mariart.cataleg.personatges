@@ -51,6 +51,13 @@
             from { opacity: 0; transform: translateY(10px); }
             to { opacity: 1; transform: translateY(0); }
         }
+        /* Nou estil per al contenidor de la imatge */
+        .image-container {
+            @apply relative w-full h-80;
+        }
+        .image-placeholder {
+            @apply absolute inset-0 bg-targeta/50 animate-pulse; /* Placeholder visible durant la càrrega */
+        }
     </style>
 </head>
 
@@ -152,7 +159,39 @@
             ]
         };
 
+        // --- NOU Component Auxiliar per a Càrrega Lazy amb Placeholder ---
+        function LazyImage({ src, alt, className, loading }) {
+            const [loaded, setLoaded] = useState(false);
+            const isLazy = loading === 'lazy';
+
+            // Simulem un placeholder de dades molt petit per a l'HTML inicial
+            // En una app real, aquí es posaria una miniatura molt optimitzada (1-2kB)
+            const placeholderSrc = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"%3E%3C/svg%3E';
+            
+            return (
+                <div className="image-container">
+                    {/* El Placeholder es mostra mentre la imatge no ha acabat de carregar */}
+                    {!loaded && (
+                        <div className="image-placeholder"></div>
+                    )}
+                    
+                    {/* L'etiqueta <img> real, que es carrega lentament */}
+                    <img 
+                        src={src} 
+                        alt={alt} 
+                        className={`${className} ${loaded ? 'opacity-100' : 'opacity-0'} transition-opacity duration-700`} 
+                        loading={loading}
+                        // Quan la imatge acaba de carregar, activem l'estat 'loaded'
+                        onLoad={() => setLoaded(true)}
+                        // L'estil 'absolute' fa que l'etiqueta estigui al damunt del placeholder
+                        style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}
+                    />
+                </div>
+            );
+        }
+        
         // --- Component de la Vista Detallada (NIVELL 3) ---
+        // Sense canvis, ja que les imatges aquí s'han de carregar eager/immediatament
         function VistaDetall({ producte, onTorna }) {
             const [imatgeActiva, setImatgeActiva] = useState(producte.imatges[0]);
             useEffect(() => { document.title = producte.nom; }, [producte]);
@@ -168,7 +207,7 @@
                     </header>
 
                     <div className="bg-white p-4 sm:p-6 rounded-3xl shadow-lg mb-8">
-                        {/* Imatge principal: La carreguem 'eager' ja que és el que l'usuari vol veure immediatament */}
+                        {/* Imatge principal: Carrega 'eager' */}
                         <img 
                             src={imatgeActiva} 
                             alt={`Imatge principal de ${producte.nom}`} 
@@ -185,15 +224,17 @@
                                 alt={`Miniatura ${index + 1}`}
                                 className={`w-24 h-24 object-cover rounded-2xl cursor-pointer border-4 transition-all duration-300 hover:scale-105 hover:shadow-md ${imgSrc === imatgeActiva ? 'border-accent shadow-lg' : 'border-transparent'}`}
                                 onClick={() => setImatgeActiva(imgSrc)}
-                                loading="eager" // Les miniatures en detall es carreguen 'eager'
+                                loading="eager" // Les miniatures en detall també es carreguen 'eager'
                             />
                         ))}
                     </div>
                 </div>
             );
         }
-
-        // --- Component del Llistat de Productes (NIVELL 2) ---
+        
+        // ----------------------------------------------------------------------
+        // --- Component del Llistat de Productes (NIVELL 2) - Ús de LazyImage ---
+        // ----------------------------------------------------------------------
         function LlistatProductesPerCategoria({ categoria, onProducteClick, onTorna }) {
             useEffect(() => { document.title = `Catàleg - ${categoria.nom}`; }, [categoria]);
 
@@ -212,8 +253,8 @@
                             {categoria.productes.map(producte => (
                                 <div key={producte.nom} className="bg-white rounded-3xl overflow-hidden shadow-lg cursor-pointer group transition-all duration-300 hover:shadow-2xl hover:-translate-y-2" onClick={() => onProducteClick({ ...producte, categoriaNom: categoria.nom })}>
                                     <div className="overflow-hidden">
-                                        {/* Imatge de producte: Carrega 'lazy' perquè es pugui fer scroll */}
-                                        <img 
+                                        {/* Ús del component LazyImage amb loading="lazy" */}
+                                        <LazyImage 
                                             src={producte.imatges[0]} 
                                             alt={producte.nom} 
                                             className="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-110" 
@@ -230,8 +271,10 @@
                 </main>
             );
         }
-
-        // --- Component del Llistat de Categories (NIVELL 1) ---
+        
+        // ----------------------------------------------------------------------
+        // --- Component del Llistat de Categories (NIVELL 1) - Ús de LazyImage ---
+        // ----------------------------------------------------------------------
         function LlistatCategories({ categories, onCategoriaClick }) {
             useEffect(() => { document.title = "Catàleg de Personatges MariArT"; }, []);
 
@@ -246,8 +289,8 @@
                             {categories.map(categoria => (
                                 <div key={categoria.nom} className="bg-white rounded-3xl overflow-hidden shadow-lg cursor-pointer group transition-all duration-300 hover:shadow-2xl hover:-translate-y-2" onClick={() => onCategoriaClick(categoria)}>
                                     <div className="overflow-hidden">
-                                        {/* Mostra la primera imatge del primer producte de la categoria. Carrega 'lazy' */}
-                                        <img
+                                        {/* Ús del component LazyImage amb loading="lazy" */}
+                                        <LazyImage
                                             src={categoria.productes[0]?.imatges[0] || 'placeholder.png'}
                                             alt={`Categoria ${categoria.nom}`}
                                             className="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-110"
@@ -298,7 +341,6 @@
 
             let content;
 
-            // La clau aquí és la Renderització Condicional: només un component s'executa i es munta al DOM.
             if (vista === 'detall' && producteSeleccionat) {
                 content = <VistaDetall producte={producteSeleccionat} onTorna={handleTornaAlLlistatDeProductes} />;
             } else if (vista === 'productes' && categoriaSeleccionada) {
