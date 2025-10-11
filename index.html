@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catàleg de Personatges MariArT</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script>
+        // Configuració personalitzada per a Tailwind CSS
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'fons': '#F5EFE6',       // Un beix molt clar per al fons
+                        'targeta': '#E8DFCA',    // Un to lleugerament més fosc per a targetes
+                        'text-principal': '#785A48', // Marró fosc per al text principal
+                        'text-secundari': '#A98F7A', // Marró més suau per a subtítols
+                        'accent': '#B48369',       // Un to terracota per a botons i accents
+                        'accent-hover': '#9C6F5A',  // Versió més fosca per a l'hover de l'accent
+                    },
+                    fontFamily: {
+                        sans: ['"Segoe UI"', 'Tahoma', 'Geneva', 'Verdana', 'sans-serif'],
+                    },
+                    borderRadius: {
+                        '2xl': '1rem',
+                        '3xl': '1.5rem',
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style type="text/tailwindcss">
+        /* Aquí podem afegir estils personalitzats o capes de Tailwind si fos necessari */
+        body {
+            @apply bg-fons text-text-principal antialiased;
+        }
+        /* Animació subtil per a la càrrega dels elements */
+        .fade-in {
+            animation: fadeIn 0.6s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="root"></div>
+
+    <script type="text/babel">
+        const { useState, useEffect } = React;
+
+        // --- DADES ESTÀTIQUES AMB ESTRUCTURA DE CATEGORIES ---
+        const categoryData = {
+            "categories": [
+                { 
+                    "nom": "Harry Potter",
+                    "productes": [
+                        { "nom": "Harry Potter", "imatges": ["https://c10.patreonusercontent.com/4/patreon-media/p/post/140978880/2129457023574b9886311b495c8de9e6/eyJxIjoxMDAsIndlYnAiOjB9/1.jpg?token-hash=x2jrhFlEF4qtxUtuusVpHULYIo-h-jmaPcasW9RFYBY%3D&token-time=1761436800", "https://c10.patreonusercontent.com/4/patreon-media/p/post/140978880/73f0c97894a4462c9ade5fe193b94180/eyJxIjoxMDAsIndlYnAiOjB9/1.png?token-hash=OSfeU3BqFWmjccelgm3obUXSPwC6JHbt_OEnhgIFT5s%3D&token-time=1761436800", "https://c10.patreonusercontent.com/4/patreon-media/p/post/140978880/e58947ffdb4f49e2840c6639db662e40/eyJxIjoxMDAsIndlYnAiOjB9/1.jpg?token-hash=SiMebVCuIHwOQ2Oxehj3WhuTkItORDfq1LNfbaf4uts%3D&token-time=1761436800"] },
+                       
+                    ]
+                },
+                { 
+                    "nom": "Demon Slayer",
+                    "productes": [
+                        { "nom": "Tanjiro", "imatges": ["https://c10.patreonusercontent.com/4/patreon-media/p/post/139480675/8bd031f68f33408c92c93a82b6147e3a/eyJxIjoxMDAsIndlYnAiOjB9/1.png?token-hash=UddkanEw0D0vfe90LhSPvVWgqvml4koCcBHhunnltHY%3D&token-time=1761436800", "https://c10.patreonusercontent.com/4/patreon-media/p/post/139480675/c0f19a8986a54a5c89b1a2689255a616/eyJxIjoxMDAsIndlYnAiOjB9/1.png?token-hash=iTyS2QYD6DXH8t92V8JkVlg4C4LYh8Upt6nJ62YHW2Q%3D&token-time=1761436800"] },
+                       
+                    ]
+                }
+            ]
+        };
+
+        // --- Component de la Vista Detallada (NIVELL 3) ---
+        function VistaDetall({ producte, onTorna }) {
+            const [imatgeActiva, setImatgeActiva] = useState(producte.imatges[0]);
+            useEffect(() => { document.title = producte.nom; }, [producte]);
+            
+            return (
+                <div className="container mx-auto px-4 py-10 fade-in">
+                    <header className="flex flex-col sm:flex-row justify-between items-center mb-8 gap-4">
+                        <h1 className="text-4xl md:text-5xl font-bold text-text-principal text-center sm:text-left">{producte.nom}</h1>
+                        <button onClick={onTorna} className="flex items-center gap-2 bg-accent text-white font-bold py-3 px-6 rounded-2xl hover:bg-accent-hover transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z" clipRule="evenodd" /></svg>
+                            Tornar a {producte.categoriaNom}
+                        </button>
+                    </header>
+                    
+                    <div className="bg-white p-4 sm:p-6 rounded-3xl shadow-lg mb-8">
+                        <img src={imatgeActiva} alt={`Imatge principal de ${producte.nom}`} className="w-full max-h-[70vh] object-contain rounded-2xl mx-auto" />
+                    </div>
+
+                    <div className="flex gap-4 justify-center flex-wrap">
+                        {producte.imatges.map((imgSrc, index) => (
+                            <img 
+                                key={index}
+                                src={imgSrc} 
+                                alt={`Miniatura ${index + 1}`}
+                                className={`w-24 h-24 object-cover rounded-2xl cursor-pointer border-4 transition-all duration-300 hover:scale-105 hover:shadow-md ${imgSrc === imatgeActiva ? 'border-accent shadow-lg' : 'border-transparent'}`}
+                                onClick={() => setImatgeActiva(imgSrc)}
+                            />
+                        ))}
+                    </div>
+                </div>
+            );
+        }
+
+        // --- Component del Llistat de Productes (NIVELL 2) ---
+        function LlistatProductesPerCategoria({ categoria, onProducteClick, onTorna }) {
+            useEffect(() => { document.title = `Catàleg - ${categoria.nom}`; }, [categoria]);
+            
+            return (
+                <main className="fade-in">
+                    <header className="text-center py-8 px-4">
+                        <h1 className="text-5xl md:text-6xl font-extrabold text-text-principal">{categoria.nom}</h1>
+                        <p className="text-xl text-text-secundari mt-2 max-w-2xl mx-auto">Tots els personatges de la nostra col·lecció de {categoria.nom}.</p>
+                        <button onClick={onTorna} className="mt-4 flex items-center gap-1 mx-auto text-accent hover:text-accent-hover font-medium transition-colors">
+                            <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z" clipRule="evenodd" /></svg>
+                            Tornar a categories
+                        </button>
+                    </header>
+                    <div className="container mx-auto px-4 sm:px-8">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+                            {categoria.productes.map(producte => (
+                                <div key={producte.nom} className="bg-white rounded-3xl overflow-hidden shadow-lg cursor-pointer group transition-all duration-300 hover:shadow-2xl hover:-translate-y-2" onClick={() => onProducteClick({...producte, categoriaNom: categoria.nom})}>
+                                    <div className="overflow-hidden">
+                                        <img src={producte.imatges[0]} alt={producte.nom} className="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-110" />
+                                    </div>
+                                    <div className="p-6 text-center">
+                                        <h3 className="text-2xl font-bold text-text-principal">{producte.nom}</h3>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </main>
+            );
+        }
+
+        // --- Component del Llistat de Categories (NIVELL 1) ---
+        function LlistatCategories({ categories, onCategoriaClick }) {
+            useEffect(() => { document.title = "Catàleg de Personatges MariArT"; }, []);
+            
+            return (
+                <main className="fade-in">
+                    <header className="text-center py-12 px-4">
+                        <h1 className="text-5xl md:text-6xl font-extrabold text-text-principal">Catàleg de personatges MariArT</h1>
+                        <p className="text-xl text-text-secundari mt-4 max-w-2xl mx-auto">Selecciona una categoria per explorar els nostres dissenys.</p>
+                    </header>
+                    <div className="container mx-auto px-4 sm:px-8">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+                            {categories.map(categoria => (
+                                <div key={categoria.nom} className="bg-white rounded-3xl overflow-hidden shadow-lg cursor-pointer group transition-all duration-300 hover:shadow-2xl hover:-translate-y-2" onClick={() => onCategoriaClick(categoria)}>
+                                    <div className="overflow-hidden">
+                                        {/* Mostra la primera imatge del primer producte de la categoria */}
+                                        <img 
+                                            src={categoria.productes[0]?.imatges[0] || 'placeholder.png'} 
+                                            alt={`Categoria ${categoria.nom}`} 
+                                            className="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-110" 
+                                        />
+                                    </div>
+                                    <div className="p-6 text-center">
+                                        <h3 className="text-2xl font-bold text-text-principal">{categoria.nom}</h3>
+                                        <p className="text-text-secundari mt-1 text-sm">{categoria.productes.length} productes</p>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </main>
+            );
+        }
+
+
+        // --- Component Principal de l'Aplicació ---
+        function App() {
+            // Estats de navegació: 'categories', 'productes', 'detall'
+            const [vista, setVista] = useState('categories');
+            const [categoriaSeleccionada, setCategoriaSeleccionada] = useState(null);
+            const [producteSeleccionat, setProducteSeleccionat] = useState(null);
+            const categories = categoryData.categories; // Dades estàtiques
+
+            const handleCategoriaClick = (categoria) => {
+                setCategoriaSeleccionada(categoria);
+                setVista('productes');
+            };
+
+            const handleProducteClick = (producte) => {
+                setProducteSeleccionat(producte);
+                setVista('detall');
+            };
+
+            const handleTornaAlLlistatDeProductes = () => {
+                setProducteSeleccionat(null);
+                setVista('productes');
+            };
+
+            const handleTornaAlLlistatDeCategories = () => {
+                setCategoriaSeleccionada(null);
+                setProducteSeleccionat(null);
+                setVista('categories');
+            };
+
+            let content;
+            
+            if (vista === 'detall' && producteSeleccionat) {
+                content = <VistaDetall producte={producteSeleccionat} onTorna={handleTornaAlLlistatDeProductes} />;
+            } else if (vista === 'productes' && categoriaSeleccionada) {
+                content = <LlistatProductesPerCategoria categoria={categoriaSeleccionada} onProducteClick={handleProducteClick} onTorna={handleTornaAlLlistatDeCategories} />;
+            } else {
+                content = <LlistatCategories categories={categories} onCategoriaClick={handleCategoriaClick} />;
+            }
+
+            return (
+                <div>
+                    {content}
+                    <footer className="text-center py-8 mt-10">
+                        <p className="text-text-secundari">&copy; {new Date().getFullYear()} MariArT</p>
+                    </footer>
+                </div>
+            );
+        }
+        
+        // --- Renderitzar l'aplicació ---
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<App />);
+    </script>
+</body>
+</html>
