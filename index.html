@@ -62,7 +62,7 @@
         const { useState, useEffect } = React;
 
         // --- DADES ESTÀTIQUES AMB ESTRUCTURA DE CATEGORIES ---
-        const categoryData = {
+         const categoryData = {
             "categories": [
                 {
                     "nom": "Harry Potter",
@@ -168,12 +168,12 @@
                     </header>
 
                     <div className="bg-white p-4 sm:p-6 rounded-3xl shadow-lg mb-8">
-                        {/* Imatge principal: Carrega 'eager' ja que és la principal */}
-                        <img
-                            src={imatgeActiva}
-                            alt={`Imatge principal de ${producte.nom}`}
+                        {/* Imatge principal: La carreguem 'eager' ja que és el que l'usuari vol veure immediatament */}
+                        <img 
+                            src={imatgeActiva} 
+                            alt={`Imatge principal de ${producte.nom}`} 
                             className="w-full max-h-[70vh] object-contain rounded-2xl mx-auto"
-                            loading="eager"
+                            loading="eager" 
                         />
                     </div>
 
@@ -185,7 +185,7 @@
                                 alt={`Miniatura ${index + 1}`}
                                 className={`w-24 h-24 object-cover rounded-2xl cursor-pointer border-4 transition-all duration-300 hover:scale-105 hover:shadow-md ${imgSrc === imatgeActiva ? 'border-accent shadow-lg' : 'border-transparent'}`}
                                 onClick={() => setImatgeActiva(imgSrc)}
-                                loading="eager" // Les miniatures en detall també es carreguen 'eager'
+                                loading="eager" // Les miniatures en detall es carreguen 'eager'
                             />
                         ))}
                     </div>
@@ -212,11 +212,11 @@
                             {categoria.productes.map(producte => (
                                 <div key={producte.nom} className="bg-white rounded-3xl overflow-hidden shadow-lg cursor-pointer group transition-all duration-300 hover:shadow-2xl hover:-translate-y-2" onClick={() => onProducteClick({ ...producte, categoriaNom: categoria.nom })}>
                                     <div className="overflow-hidden">
-                                        {/* Imatge de producte: Carrega 'lazy' */}
-                                        <img
-                                            src={producte.imatges[0]}
-                                            alt={producte.nom}
-                                            className="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-110"
+                                        {/* Imatge de producte: Carrega 'lazy' perquè es pugui fer scroll */}
+                                        <img 
+                                            src={producte.imatges[0]} 
+                                            alt={producte.nom} 
+                                            className="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-110" 
                                             loading="lazy"
                                         />
                                     </div>
@@ -298,6 +298,7 @@
 
             let content;
 
+            // La clau aquí és la Renderització Condicional: només un component s'executa i es munta al DOM.
             if (vista === 'detall' && producteSeleccionat) {
                 content = <VistaDetall producte={producteSeleccionat} onTorna={handleTornaAlLlistatDeProductes} />;
             } else if (vista === 'productes' && categoriaSeleccionada) {
