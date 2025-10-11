@@ -157,7 +157,13 @@
                     </header>
 
                     <div className="bg-white p-4 sm:p-6 rounded-3xl shadow-lg mb-8">
-                        <img src={imatgeActiva} alt={`Imatge principal de ${producte.nom}`} className="w-full max-h-[70vh] object-contain rounded-2xl mx-auto" />
+                        {/* Imatge principal: Carrega 'eager' ja que és la principal */}
+                        <img 
+                            src={imatgeActiva} 
+                            alt={`Imatge principal de ${producte.nom}`} 
+                            className="w-full max-h-[70vh] object-contain rounded-2xl mx-auto"
+                            loading="eager" 
+                        />
                     </div>
 
                     <div className="flex gap-4 justify-center flex-wrap">
@@ -168,6 +174,7 @@
                                 alt={`Miniatura ${index + 1}`}
                                 className={`w-24 h-24 object-cover rounded-2xl cursor-pointer border-4 transition-all duration-300 hover:scale-105 hover:shadow-md ${imgSrc === imatgeActiva ? 'border-accent shadow-lg' : 'border-transparent'}`}
                                 onClick={() => setImatgeActiva(imgSrc)}
+                                loading="eager" // Les miniatures en detall també es carreguen 'eager'
                             />
                         ))}
                     </div>
@@ -194,7 +201,13 @@
                             {categoria.productes.map(producte => (
                                 <div key={producte.nom} className="bg-white rounded-3xl overflow-hidden shadow-lg cursor-pointer group transition-all duration-300 hover:shadow-2xl hover:-translate-y-2" onClick={() => onProducteClick({ ...producte, categoriaNom: categoria.nom })}>
                                     <div className="overflow-hidden">
-                                        <img src={producte.imatges[0]} alt={producte.nom} className="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-110" />
+                                        {/* Imatge de producte: Carrega 'lazy' */}
+                                        <img 
+                                            src={producte.imatges[0]} 
+                                            alt={producte.nom} 
+                                            className="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-110" 
+                                            loading="lazy"
+                                        />
                                     </div>
                                     <div className="p-6 text-center">
                                         <h3 className="text-2xl font-bold text-text-principal">{producte.nom}</h3>
@@ -222,11 +235,12 @@
                             {categories.map(categoria => (
                                 <div key={categoria.nom} className="bg-white rounded-3xl overflow-hidden shadow-lg cursor-pointer group transition-all duration-300 hover:shadow-2xl hover:-translate-y-2" onClick={() => onCategoriaClick(categoria)}>
                                     <div className="overflow-hidden">
-                                        {/* Mostra la primera imatge del primer producte de la categoria */}
+                                        {/* Mostra la primera imatge del primer producte de la categoria. Carrega 'lazy' */}
                                         <img
                                             src={categoria.productes[0]?.imatges[0] || 'placeholder.png'}
                                             alt={`Categoria ${categoria.nom}`}
                                             className="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-110"
+                                            loading="lazy"
                                         />
                                     </div>
                                     <div className="p-6 text-center">
