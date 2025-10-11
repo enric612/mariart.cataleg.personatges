@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html lang="ca">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Catàleg de Personatges MariArT</title>
-    
+
     <script src="https://cdn.tailwindcss.com"></script>
-    
+
     <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
     <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
-    
+
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 
     <script>
@@ -36,7 +37,7 @@
             }
         }
     </script>
-    
+
     <style type="text/tailwindcss">
         /* Aquí podem afegir estils personalitzats o capes de Tailwind si fos necessari */
         body {
@@ -52,6 +53,7 @@
         }
     </style>
 </head>
+
 <body>
 
     <div id="root"></div>
@@ -62,18 +64,21 @@
         // --- DADES ESTÀTIQUES AMB ESTRUCTURA DE CATEGORIES ---
         const categoryData = {
             "categories": [
-                { 
+                {
                     "nom": "Harry Potter",
                     "productes": [
-                        { "nom": "Harry Potter", "imatges": ["https://c10.patreonusercontent.com/4/patreon-media/p/post/140978880/2129457023574b9886311b495c8de9e6/eyJxIjoxMDAsIndlYnAiOjB9/1.jpg?token-hash=x2jrhFlEF4qtxUtuusVpHULYIo-h-jmaPcasW9RFYBY%3D&token-time=1761436800", "https://c10.patreonusercontent.com/4/patreon-media/p/post/140978880/73f0c97894a4462c9ade5fe193b94180/eyJxIjoxMDAsIndlYnAiOjB9/1.png?token-hash=OSfeU3BqFWmjccelgm3obUXSPwC6JHbt_OEnhgIFT5s%3D&token-time=1761436800", "https://c10.patreonusercontent.com/4/patreon-media/p/post/140978880/e58947ffdb4f49e2840c6639db662e40/eyJxIjoxMDAsIndlYnAiOjB9/1.jpg?token-hash=SiMebVCuIHwOQ2Oxehj3WhuTkItORDfq1LNfbaf4uts%3D&token-time=1761436800"] },
-                       
+                        { "nom": "Harry Potter", "imatges": ["https://c10.patreonusercontent.com/4/patreon-media/p/post/140978880/2129457023574b9886311b495c8de9e6/eyJxIjoxMDAsIndlYnAiOjB9/1.jpg?token-hash=x2jrhFlEF4qtxUtuusVpHULYIo-h-jmaPcasW9RFYBY%3D&token-time=1761436800", "https://c10.patreonusercontent.com/4/patreon-media/p/post/140978880/73f0c97894a4462c9ade5fe193b94180/eyJxIjoxMDAsIndlYnAiOjB9/1.png?token-hash=OSfeU3BqFWmjccelgm3obUXSPwC6JHbt_OEnhgIFT5s%3D&token-time=1761436800", "https://c10.patreonusercontent.com/4/patreon-media/p/post/140978880/e58947ffdb4f49e2840c6639db662e40/eyJxIjoxMDAsIndlYnAiOjB9/1.jpg?token-hash=SiMebVCuIHwOQ2Oxehj3WhuTkItORDfq1LNfbaf4uts%3D&token-time=1761436800", "https://c10.patreonusercontent.com/4/patreon-media/p/post/140978880/877149858d104d8da10f0dfd346d8330/eyJxIjoxMDAsIndlYnAiOjB9/1.gif?token-hash=DaTh_06tLv02o552XRfSwa0D0JVkYo3oUQLN5xO8qxg%3D&token-time=1761436800"] },
+
                     ]
                 },
-                { 
+                {
                     "nom": "Demon Slayer",
                     "productes": [
-                        { "nom": "Tanjiro", "imatges": ["https://c10.patreonusercontent.com/4/patreon-media/p/post/139480675/8bd031f68f33408c92c93a82b6147e3a/eyJxIjoxMDAsIndlYnAiOjB9/1.png?token-hash=UddkanEw0D0vfe90LhSPvVWgqvml4koCcBHhunnltHY%3D&token-time=1761436800", "https://c10.patreonusercontent.com/4/patreon-media/p/post/139480675/c0f19a8986a54a5c89b1a2689255a616/eyJxIjoxMDAsIndlYnAiOjB9/1.png?token-hash=iTyS2QYD6DXH8t92V8JkVlg4C4LYh8Upt6nJ62YHW2Q%3D&token-time=1761436800"] },
-                       
+                        {
+                            "nom": "Tanjiro", "imatges": ["https://c10.patreonusercontent.com/4/patreon-media/p/post/139480675/8bd031f68f33408c92c93a82b6147e3a/eyJxIjoxMDAsIndlYnAiOjB9/1.png?token-hash=UddkanEw0D0vfe90LhSPvVWgqvml4koCcBHhunnltHY%3D&token-time=1761436800", "https://c10.patreonusercontent.com/4/patreon-media/p/post/139480675/c0f19a8986a54a5c89b1a2689255a616/eyJxIjoxMDAsIndlYnAiOjB9/1.png?token-hash=iTyS2QYD6DXH8t92V8JkVlg4C4LYh8Upt6nJ62YHW2Q%3D&token-time=1761436800", "https://c10.patreonusercontent.com/4/patreon-media/p/post/139480675/3652611cb43945488ec37d9000814d46/eyJxIjoxMDAsIndlYnAiOjB9/1.png?token-hash=qQQNXw3lqTVUYuxSpEbt6FChbmfFuUFZB4uyfRE2Eh4%3D&token-time=1761436800", "https://c10.patreonusercontent.com/4/patreon-media/p/post/139480675/81d5b82d23f24b8e9c57d06e3ea86115/eyJxIjoxMDAsIndlYnAiOjB9/1.png?token-hash=AuJVh6rGB1yZCr9vRheE1k5NWlPZI8qHRXIGpvWSHRw%3D&token-time=1761436800", "https://c10.patreonusercontent.com/4/patreon-media/p/post/139480675/ce0c3bbd499848148cf0e57c199b56f0/eyJxIjoxMDAsIndlYnAiOjB9/1.gif?token-hash=PQ_beyFqVEfNuAaLrki4DMgRDDL8aiLXx8j8kxAE4D0%3D&token-time=1761436800"
+                            ]
+                        },
+
                     ]
                 }
             ]
@@ -83,7 +88,7 @@
         function VistaDetall({ producte, onTorna }) {
             const [imatgeActiva, setImatgeActiva] = useState(producte.imatges[0]);
             useEffect(() => { document.title = producte.nom; }, [producte]);
-            
+
             return (
                 <div className="container mx-auto px-4 py-10 fade-in">
                     <header className="flex flex-col sm:flex-row justify-between items-center mb-8 gap-4">
@@ -93,16 +98,16 @@
                             Tornar a {producte.categoriaNom}
                         </button>
                     </header>
-                    
+
                     <div className="bg-white p-4 sm:p-6 rounded-3xl shadow-lg mb-8">
                         <img src={imatgeActiva} alt={`Imatge principal de ${producte.nom}`} className="w-full max-h-[70vh] object-contain rounded-2xl mx-auto" />
                     </div>
 
                     <div className="flex gap-4 justify-center flex-wrap">
                         {producte.imatges.map((imgSrc, index) => (
-                            <img 
+                            <img
                                 key={index}
-                                src={imgSrc} 
+                                src={imgSrc}
                                 alt={`Miniatura ${index + 1}`}
                                 className={`w-24 h-24 object-cover rounded-2xl cursor-pointer border-4 transition-all duration-300 hover:scale-105 hover:shadow-md ${imgSrc === imatgeActiva ? 'border-accent shadow-lg' : 'border-transparent'}`}
                                 onClick={() => setImatgeActiva(imgSrc)}
@@ -116,7 +121,7 @@
         // --- Component del Llistat de Productes (NIVELL 2) ---
         function LlistatProductesPerCategoria({ categoria, onProducteClick, onTorna }) {
             useEffect(() => { document.title = `Catàleg - ${categoria.nom}`; }, [categoria]);
-            
+
             return (
                 <main className="fade-in">
                     <header className="text-center py-8 px-4">
@@ -130,7 +135,7 @@
                     <div className="container mx-auto px-4 sm:px-8">
                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
                             {categoria.productes.map(producte => (
-                                <div key={producte.nom} className="bg-white rounded-3xl overflow-hidden shadow-lg cursor-pointer group transition-all duration-300 hover:shadow-2xl hover:-translate-y-2" onClick={() => onProducteClick({...producte, categoriaNom: categoria.nom})}>
+                                <div key={producte.nom} className="bg-white rounded-3xl overflow-hidden shadow-lg cursor-pointer group transition-all duration-300 hover:shadow-2xl hover:-translate-y-2" onClick={() => onProducteClick({ ...producte, categoriaNom: categoria.nom })}>
                                     <div className="overflow-hidden">
                                         <img src={producte.imatges[0]} alt={producte.nom} className="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-110" />
                                     </div>
@@ -148,7 +153,7 @@
         // --- Component del Llistat de Categories (NIVELL 1) ---
         function LlistatCategories({ categories, onCategoriaClick }) {
             useEffect(() => { document.title = "Catàleg de Personatges MariArT"; }, []);
-            
+
             return (
                 <main className="fade-in">
                     <header className="text-center py-12 px-4">
@@ -161,10 +166,10 @@
                                 <div key={categoria.nom} className="bg-white rounded-3xl overflow-hidden shadow-lg cursor-pointer group transition-all duration-300 hover:shadow-2xl hover:-translate-y-2" onClick={() => onCategoriaClick(categoria)}>
                                     <div className="overflow-hidden">
                                         {/* Mostra la primera imatge del primer producte de la categoria */}
-                                        <img 
-                                            src={categoria.productes[0]?.imatges[0] || 'placeholder.png'} 
-                                            alt={`Categoria ${categoria.nom}`} 
-                                            className="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-110" 
+                                        <img
+                                            src={categoria.productes[0]?.imatges[0] || 'placeholder.png'}
+                                            alt={`Categoria ${categoria.nom}`}
+                                            className="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-110"
                                         />
                                     </div>
                                     <div className="p-6 text-center">
@@ -210,7 +215,7 @@
             };
 
             let content;
-            
+
             if (vista === 'detall' && producteSeleccionat) {
                 content = <VistaDetall producte={producteSeleccionat} onTorna={handleTornaAlLlistatDeProductes} />;
             } else if (vista === 'productes' && categoriaSeleccionada) {
@@ -228,10 +233,11 @@
                 </div>
             );
         }
-        
+
         // --- Renderitzar l'aplicació ---
         const root = ReactDOM.createRoot(document.getElementById('root'));
         root.render(<App />);
     </script>
 </body>
+
 </html>
