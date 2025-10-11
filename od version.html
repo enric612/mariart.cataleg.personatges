@@ -39,9 +39,11 @@
     </script>
 
     <style type="text/tailwindcss">
+        /* Aquí podem afegir estils personalitzats o capes de Tailwind si fos necessari */
         body {
             @apply bg-fons text-text-principal antialiased;
         }
+        /* Animació subtil per a la càrrega dels elements */
         .fade-in {
             animation: fadeIn 0.6s ease-in-out;
         }
@@ -49,7 +51,7 @@
             from { opacity: 0; transform: translateY(10px); }
             to { opacity: 1; transform: translateY(0); }
         }
-        /* Estil per al contenidor de la imatge */
+        /* Nou estil per al contenidor de la imatge */
         .image-container {
             @apply relative w-full h-80;
         }
@@ -66,92 +68,90 @@
     <script type="text/babel">
         const { useState, useEffect } = React;
 
-        // --- DADES ESTÀTIQUES AMB RUTES LOCALS OPTIMITZADES (WebP i MP4) ---
-        const categoryData = {
+        // --- DADES ESTÀTIQUES AMB ESTRUCTURA DE CATEGORIES ---
+         const categoryData = {
             "categories": [
                 {
                     "nom": "Harry Potter",
                     "productes": [
                         {
-                            "nom": "Harry Potter",
-                            "videoUrl": "/imatges/HP/HP/video.webm", // NOVA URL DEL VÍDEO
-                            "imatges": [
-                                "/imatges/HP/HP/1.webp",
-                                "/imatges/HP/HP/2.webp",
-                                "/imatges/HP/HP/3.webp",
-                                "/imatges/HP/HP/4.webp",
-                                "/imatges/HP/HP/5.webp",
-                                "/imatges/HP/HP/6.webp",
+                            "nom": "Harry Potter", "imatges": [
+                                "https://1drv.ms/i/c/fb14d38854de2fb7/IQRMIfvrFZFsQbVBfCUZf2G7AXhdGsWAtFB26ETy4I9xjG8",
+                                "https://1drv.ms/i/c/fb14d38854de2fb7/IQTYzOxcgMjoTpazIfjpfVaYAXyrKPeLY0DfABRPSRwrjqw",
+                                "https://1drv.ms/i/c/fb14d38854de2fb7/IQT0Vd7OyTNxQIa82w3qBQntAfo1mnKwRDj0rFb0UTG9SLk",
+                                "https://1drv.ms/i/c/fb14d38854de2fb7/IQRoy6NMYW8zSay-maV2DZAUATcHUDqd5uSdioCb0YHV59U",
+                                "https://1drv.ms/i/c/fb14d38854de2fb7/IQSJqjO8J30oQoECJDU_fqIYAX1uMghF1cmZIFDC--6RFdk",
+                                "https://1drv.ms/i/c/fb14d38854de2fb7/IQRnqkGx0wcjR7rZEO-tam5tAQJnqDUX4H63U0Ll7Bkr87A",
+                                "https://1drv.ms/i/c/fb14d38854de2fb7/IQR1Nux85hB6SZmXDM84hj5mAadRso-L01DdSrSvF23roSw"
                             ]
                         },
+
                     ]
                 },// END HARRY POTTER
-                {
+                {// DEMON SLAYER
                     "nom": "Demon Slayer",
                     "productes": [
                         {
-                            "nom": "Tanjiro",
-                            "videoUrl": "/imatges/DemonSlayer/Tanjiro/video.webm", // Sense vídeo, només imatges estàtiques
-                            "imatges": [
-                                "/imatges/DemonSlayer/Tanjiro/1.webp",
-                                "/imatges/DemonSlayer/Tanjiro/2.webp",
-                                "/imatges/DemonSlayer/Tanjiro/3.webp",
-                                "/imatges/DemonSlayer/Tanjiro/4.webp",
-                                "/imatges/DemonSlayer/Tanjiro/5.webp", ,
+                            "nom": "Tanjiro", "imatges": ["https://1drv.ms/i/c/fb14d38854de2fb7/IQQiY4rtGRlaSryCvDtlbQMvAZBA32yShqrxY-iRkPSwmP4?width=2556&height=2554", "https://1drv.ms/i/c/fb14d38854de2fb7/IQQCeeDHSX_1SbfLOwlszfu1ATY5VHwba0Pg8HmBLPqH5Qs?width=2556&height=2554",
+                                "https://1drv.ms/i/c/fb14d38854de2fb7/IQTHd1XOZhZ7Qqj5HEw3J4ZnATNmkjtj4lsRYWULUhhAXRg?width=2556&height=2554",
+                                "https://1drv.ms/i/c/fb14d38854de2fb7/IQRz1he-RTunQbJiM_pg2ZhOAR62E5WviBpMgW6JSrJttzM?width=2556&height=2554",
+                                "https://1drv.ms/i/c/fb14d38854de2fb7/IQSj8yRlhpV_TYTsAJkThXErAQxF8gV7PVEudJxYPMR3kdE?width=2556&height=2554",
+                                "https://1drv.ms/i/c/fb14d38854de2fb7/IQQW5tMNqoLMRo6eLJ5gEcmZAZibqirBLNgW4KcDE1NrC-k?width=1024"
                             ]
                         },
 
                     ]
                 },// END DEMON SLAYER
+                // ZELDA
                 {
                     "nom": "The Legend of Zelda",
                     "productes": [
                         {
                             "nom": "Link",
-                            "videoUrl": "/imatges/Zelda/Link/video.webm",
                             "imatges": [
-                                "/imatges/Zelda/Link/1.webp",
-                                "/imatges/Zelda/Link/2.webp",
-                                "/imatges/Zelda/Link/3.webp",
-                                "/imatges/Zelda/Link/4.webp",
-                                "/imatges/Zelda/Link/5.webp",
-                                "/imatges/Zelda/Link/6.webp",
+                                "https://1drv.ms/i/c/fb14d38854de2fb7/IQTqI7CYyWtcTInjJDwIBeK9AQZf9uOfAek-xcDU1kpUinI",
+                                "https://1drv.ms/i/c/fb14d38854de2fb7/IQQ4GkzbXYG_RZAjm4PELHZgAROUcC2RaovsfSPcXylP2OU",
+                                "https://1drv.ms/i/c/fb14d38854de2fb7/IQQnNO6BuBaqS5VnWRo3H8cEAcasnwNdlpEW9sXEFGGMyJ8",
+                                "https://1drv.ms/i/c/fb14d38854de2fb7/IQS-qJhSHGZXQKggz0CA9U3IAavtdSk5CEa4ZdBV1Uzq2Fk",
+                                "https://1drv.ms/i/c/fb14d38854de2fb7/IQRLTAnKf7G8R6IPkxh0CnPAAah_poLtIl-718wmJDqvTHw",
+                                "https://1drv.ms/i/c/fb14d38854de2fb7/IQSz4GKf-sPmTZ-svzWBS68pAd6YvSEh6MNaOHmGtAMcznA",
+                                "https://1drv.ms/i/c/fb14d38854de2fb7/IQQYDJ2PSnmlS7XxfCdImPBHATMNFQLaba_a9VP_1cOchEw"
                             ]
                         }
 
                     ]
                 },// END ZELDA
+                // BOLA DE DRAC
                 {
                     "nom": "Bola de Drac (Dragon Ball)",
                     "productes": [
                         {
-                            "nom": "Goku",
-                            "videoUrl": null,
+                            "nom": "Goku mini nuvol",
                             "imatges": [
-                                "/imatges/bdd/goku/1.webp",
-                                "/imatges/bdd/goku/2.webp",
-                                "/imatges/bdd/goku/3.webp",
-                                "/imatges/bdd/goku/4.webp",
-                                "/imatges/bdd/goku/5.webp",
+                                "https://1drv.ms/i/c/fb14d38854de2fb7/IQRdME4LaT1nRK0wAhYCOE6hAZ2AodIYUSL3i4Umq1LMI18",
+                                "https://1drv.ms/i/c/fb14d38854de2fb7/IQSOK5EIn059QK_SVZSy7CgMAUyvpt0KtUXYYeo9ib62C1E",
+                                "https://1drv.ms/i/c/fb14d38854de2fb7/IQSE-xdiKb4CSrXEF4M7Cm8vAWEmPzOuTkVHzfAThyCKkOs",
+                                "https://1drv.ms/i/c/fb14d38854de2fb7/IQQbqSaIq4r8ToKrbd3gKJ4hAUU446DPxmSfzVGl_2fcQos",
+                                "https://1drv.ms/i/c/fb14d38854de2fb7/IQT6fR7D4rqHS5VieMeCZTSQAeLI5NZ1VSwelYXQ8A9S4Mg"
                             ]
                         },
                         {
                             "nom": "Vegeta mini 2 versions",
-                            "videoUrl": "/imatges/bdd/vegeta/video.webm",
                             "imatges": [
-                                "/imatges/bdd/vegeta/1.webp",
-                                "/imatges/bdd/vegeta/2.webp",
-                                "/imatges/bdd/vegeta/3.webp",
-                                "/imatges/bdd/vegeta/4.webp",
+                                "https://1drv.ms/i/c/fb14d38854de2fb7/IQR7LYNbwh6jRa-SjCHf5rybAZWBg4sy23eIp3lp1b1Aumg",
+                                "https://1drv.ms/i/c/fb14d38854de2fb7/IQRtQNy0IDqySpLPQAr3vhPMAXWCcFp30ZEGLGmwJczgELQ",
+                                "https://1drv.ms/i/c/fb14d38854de2fb7/IQRb0y8jzJISSbvFUDni9lEfAVgk59fRIK1aQzFxFBDyuyY",
+                                "https://1drv.ms/i/c/fb14d38854de2fb7/IQT5M6cprmHnRo5bj4ZldqXNAdt1oF6-59is_mQl8U9yUUQ",
+                                "https://1drv.ms/i/c/fb14d38854de2fb7/IQTG_AuGlM68TIe0iHb4jFSwAWochM6_HLbkVbnASV7IpLo"
                             ]
                         },
                         {
                             "nom": "Boo Kid",
-                            "videoUrl": "/imatges/bdd/boo/video.webm",
                             "imatges": [
-                               "/imatges/bdd/boo/1.webp",
-                               "/imatges/bdd/boo/2.webp",
-                               "/imatges/bdd/boo/3.webp",
+                                "https://1drv.ms/i/c/fb14d38854de2fb7/IQRGiWZsgso8RIGDzRClM3lhAQoE6xU-gTpcdU58iY9dM0s",
+                                "https://1drv.ms/i/c/fb14d38854de2fb7/IQSuDm5KEmboQqFF9tuWaytFAfm9xB6gEMBeR_eSgIFTUmo",
+                                "https://1drv.ms/i/c/fb14d38854de2fb7/IQSdOm3MnKD2Srh7n7mwxewmAS7v4mlMulYVMZ0kkjpflzU",
+                                "https://1drv.ms/i/c/fb14d38854de2fb7/IQQkBkCfYIXER5a3GSzeQw2FAcjsUZQkeO-0HRBqJ7AWQ8o"
                             ]
                         }
                     ]
@@ -159,40 +159,42 @@
             ]
         };
 
-        // --- Component Auxiliar per a Càrrega Lazy amb Placeholder ---
+        // --- NOU Component Auxiliar per a Càrrega Lazy amb Placeholder ---
         function LazyImage({ src, alt, className, loading }) {
             const [loaded, setLoaded] = useState(false);
+            const isLazy = loading === 'lazy';
 
+            // Simulem un placeholder de dades molt petit per a l'HTML inicial
+            // En una app real, aquí es posaria una miniatura molt optimitzada (1-2kB)
+            const placeholderSrc = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"%3E%3C/svg%3E';
+            
             return (
                 <div className="image-container">
                     {/* El Placeholder es mostra mentre la imatge no ha acabat de carregar */}
                     {!loaded && (
                         <div className="image-placeholder"></div>
                     )}
-
-                    <img
-                        src={src}
-                        alt={alt}
-                        className={`${className} ${loaded ? 'opacity-100' : 'opacity-0'} transition-opacity duration-700`}
+                    
+                    {/* L'etiqueta <img> real, que es carrega lentament */}
+                    <img 
+                        src={src} 
+                        alt={alt} 
+                        className={`${className} ${loaded ? 'opacity-100' : 'opacity-0'} transition-opacity duration-700`} 
                         loading={loading}
+                        // Quan la imatge acaba de carregar, activem l'estat 'loaded'
                         onLoad={() => setLoaded(true)}
+                        // L'estil 'absolute' fa que l'etiqueta estigui al damunt del placeholder
                         style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}
                     />
                 </div>
             );
         }
-
-        // ----------------------------------------------------------------------
-        // --- Component de la Vista Detallada (NIVELL 3) - AMB SUPORT DE VÍDEO ---
-        // ----------------------------------------------------------------------
+        
+        // --- Component de la Vista Detallada (NIVELL 3) ---
+        // Sense canvis, ja que les imatges aquí s'han de carregar eager/immediatament
         function VistaDetall({ producte, onTorna }) {
-            // Si hi ha videoUrl, el recurs actiu inicial és l'URL del vídeo, sinó és la primera imatge
-            const initialSource = producte.videoUrl || producte.imatges[0];
-            const [imatgeActiva, setImatgeActiva] = useState(initialSource);
+            const [imatgeActiva, setImatgeActiva] = useState(producte.imatges[0]);
             useEffect(() => { document.title = producte.nom; }, [producte]);
-
-            // Comprova si el recurs actual és un vídeo (utilitzat per la renderització condicional)
-            const isVideoActive = producte.videoUrl && imatgeActiva === producte.videoUrl;
 
             return (
                 <div className="container mx-auto px-4 py-10 fade-in">
@@ -205,51 +207,16 @@
                     </header>
 
                     <div className="bg-white p-4 sm:p-6 rounded-3xl shadow-lg mb-8">
-
-                        {isVideoActive ? (
-                            // CAS 1: MOSTRAR VÍDEO OPTIMITZAT (MP4/WebM)
-                            <video
-                                key={producte.videoUrl} // Utilitzem key per re-renderitzar quan canvia la font
-                                className="w-full max-h-[70vh] object-contain rounded-2xl mx-auto"
-                                autoPlay
-                                loop
-                                muted // Obligatori per a l'autoplay a molts navegadors
-                                playsInline // Recomanat per a mòbils
-                                poster={producte.imatges[0]} // WebP estàtic per a la previsualització
-                                loading="eager"
-                            >
-                                <source src={producte.videoUrl} type="video/webm" />
-                                {/* Fallback a imatge estàtica per a navegadors sense suport o error */}
-                                <img src={producte.imatges[0]} alt={producte.nom} />
-                            </video>
-                        ) : (
-                            // CAS 2: MOSTRAR IMATGE ESTÀTICA (WebP)
-                            <img
-                                src={imatgeActiva}
-                                alt={`Imatge principal de ${producte.nom}`}
-                                className="w-full max-h-[70vh] object-contain rounded-2xl mx-auto"
-                                loading="eager"
-                            />
-                        )}
+                        {/* Imatge principal: Carrega 'eager' */}
+                        <img 
+                            src={imatgeActiva} 
+                            alt={`Imatge principal de ${producte.nom}`} 
+                            className="w-full max-h-[70vh] object-contain rounded-2xl mx-auto"
+                            loading="eager" 
+                        />
                     </div>
 
                     <div className="flex gap-4 justify-center flex-wrap">
-
-                        {/* BOTÓ ADDICIONAL PER SELECCIONAR EL VÍDEO (si existeix) */}
-                        {producte.videoUrl && (
-                            <div
-                                key="video-btn"
-                                className={`w-24 h-24 flex items-center justify-center bg-targeta rounded-2xl cursor-pointer border-4 transition-all duration-300 hover:scale-105 hover:shadow-md ${producte.videoUrl === imatgeActiva ? 'border-accent shadow-lg' : 'border-transparent'}`}
-                                onClick={() => setImatgeActiva(producte.videoUrl)}
-                                title="Mostrar animació (substitut del GIF)"
-                            >
-                                <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-text-principal" viewBox="0 0 20 20" fill="currentColor">
-                                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clipRule="evenodd" />
-                                </svg>
-                            </div>
-                        )}
-
-                        {/* MINIATURES D'IMATGES ESTÀTIQUES */}
                         {producte.imatges.map((imgSrc, index) => (
                             <img
                                 key={index}
@@ -257,16 +224,16 @@
                                 alt={`Miniatura ${index + 1}`}
                                 className={`w-24 h-24 object-cover rounded-2xl cursor-pointer border-4 transition-all duration-300 hover:scale-105 hover:shadow-md ${imgSrc === imatgeActiva ? 'border-accent shadow-lg' : 'border-transparent'}`}
                                 onClick={() => setImatgeActiva(imgSrc)}
-                                loading="eager" // Es carreguen eager, ja que estem a la vista detallada
+                                loading="eager" // Les miniatures en detall també es carreguen 'eager'
                             />
                         ))}
                     </div>
                 </div>
             );
         }
-
+        
         // ----------------------------------------------------------------------
-        // --- Component del Llistat de Productes (NIVELL 2) ---
+        // --- Component del Llistat de Productes (NIVELL 2) - Ús de LazyImage ---
         // ----------------------------------------------------------------------
         function LlistatProductesPerCategoria({ categoria, onProducteClick, onTorna }) {
             useEffect(() => { document.title = `Catàleg - ${categoria.nom}`; }, [categoria]);
@@ -287,10 +254,10 @@
                                 <div key={producte.nom} className="bg-white rounded-3xl overflow-hidden shadow-lg cursor-pointer group transition-all duration-300 hover:shadow-2xl hover:-translate-y-2" onClick={() => onProducteClick({ ...producte, categoriaNom: categoria.nom })}>
                                     <div className="overflow-hidden">
                                         {/* Ús del component LazyImage amb loading="lazy" */}
-                                        <LazyImage
-                                            src={producte.imatges[0]}
-                                            alt={producte.nom}
-                                            className="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-110"
+                                        <LazyImage 
+                                            src={producte.imatges[0]} 
+                                            alt={producte.nom} 
+                                            className="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-110" 
                                             loading="lazy"
                                         />
                                     </div>
@@ -304,9 +271,9 @@
                 </main>
             );
         }
-
+        
         // ----------------------------------------------------------------------
-        // --- Component del Llistat de Categories (NIVELL 1) ---
+        // --- Component del Llistat de Categories (NIVELL 1) - Ús de LazyImage ---
         // ----------------------------------------------------------------------
         function LlistatCategories({ categories, onCategoriaClick }) {
             useEffect(() => { document.title = "Catàleg de Personatges MariArT"; }, []);
@@ -375,8 +342,7 @@
             let content;
 
             if (vista === 'detall' && producteSeleccionat) {
-                // IMPORTANT: Passem també el nom de la categoria per al botó de "Tornar"
-                content = <VistaDetall producte={producteSeleccionat} onTorna={handleTornaAlLlistatDeProductes} categoriaNom={categoriaSeleccionada.nom} />;
+                content = <VistaDetall producte={producteSeleccionat} onTorna={handleTornaAlLlistatDeProductes} />;
             } else if (vista === 'productes' && categoriaSeleccionada) {
                 content = <LlistatProductesPerCategoria categoria={categoriaSeleccionada} onProducteClick={handleProducteClick} onTorna={handleTornaAlLlistatDeCategories} />;
             } else {
