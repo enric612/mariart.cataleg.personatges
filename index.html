@@ -61,9 +61,65 @@
 
 <body>
 
-    <div id="root"></div>
+
+        <div id="root"></div>
+
 
     <script type="text/babel">
+        // --- Botó flotant Instagram ---
+        function InstagramButton() {
+            return (
+                <a
+                    href="https://instagram.com/mariart_natural"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title="Segueix-nos a Instagram"
+                    style={{
+                        position: 'fixed',
+                        right: '2rem',
+                        bottom: '2rem',
+                        zIndex: 100,
+                        background: '#E1306C',
+                        borderRadius: '50%',
+                        width: '64px',
+                        height: '64px',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        boxShadow: '0 4px 16px rgba(0,0,0,0.15)'
+                    }}
+                >
+                    <img src="/imatges/instagram.webp" alt="Instagram" style={{ width: '32px', height: '32px', objectFit: 'contain' }} />
+                </a>
+            );
+        }
+
+        function WhatsappButton() {
+            return (
+                <a
+                    href="https://wa.me/34657626290"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title="Contacta per WhatsApp"
+                    style={{
+                        position: 'fixed',
+                        right: '2rem',
+                        bottom: '8.5rem', // 2rem + 64px + 10px separació
+                        zIndex: 100,
+                        background: '#25D366',
+                        borderRadius: '50%',
+                        width: '64px',
+                        height: '64px',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        boxShadow: '0 4px 16px rgba(0,0,0,0.15)'
+                    }}
+                >
+                    <img src="/imatges/whatsapp.webp" alt="WhatsApp" style={{ width: '32px', height: '32px', objectFit: 'contain' }} />
+                </a>
+            );
+        }
         const { useState, useEffect } = React;
         // --- Component Auxiliar per a Càrrega Lazy amb Placeholder ---
         function LazyImage({ src, alt, className, loading }) {
@@ -358,6 +414,8 @@
             return (
                 <div>
                     {content}
+                    <InstagramButton />
+                    <WhatsappButton />
                     <footer className="text-center py-8 mt-10">
                         <p className="text-text-secundari">&copy; {new Date().getFullYear()} MariArT</p>
                     </footer>
