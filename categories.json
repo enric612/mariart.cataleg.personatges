@@ -562,6 +562,58 @@
           ]
         }
       ]
+    },
+    {
+      "productes": [
+        {
+          "nom": "Derpy Tiger",
+          "videoUrl": "/imatges/kpopdemonhunters/derpytiger/video.webm",
+          "imatges": [
+            "/imatges/kpopdemonhunters/derpytiger/1.webp",
+            "/imatges/kpopdemonhunters/derpytiger/2.webp",
+            "/imatges/kpopdemonhunters/derpytiger/3.webp",
+            "/imatges/kpopdemonhunters/derpytiger/4.webp",
+            "/imatges/kpopdemonhunters/derpytiger/5.webp"
+          ]
+        },
+        {
+          "nom": "Sussy Bird",
+          "videoUrl": "/imatges/kpopdemonhunters/sussybird/video.webm",
+          "imatges": [
+            "/imatges/kpopdemonhunters/sussybird/1.webp",
+            "/imatges/kpopdemonhunters/sussybird/2.webp",
+            "/imatges/kpopdemonhunters/sussybird/3.webp",
+            "/imatges/kpopdemonhunters/sussybird/4.webp"
+          ]
+        }
+      ]
+    },
+    {
+      "nom": "Monstruos S.A.",
+      "productes": [
+        {
+          "nom": "Mike Wazowski",
+          "videoUrl": "/imatges/monstruossa/mikewazowski/video.webm",
+          "imatges": [
+            "/imatges/monstruossa/mikewazowski/1.webp",
+            "/imatges/monstruossa/mikewazowski/2.webp",
+            "/imatges/monstruossa/mikewazowski/3.webp",
+            "/imatges/monstruossa/mikewazowski/4.webp"
+          ]
+        },
+        {
+          "nom": "Sulley",
+          "videoUrl": "/imatges/monstruossa/sulley/video.webm",
+          "imatges": [
+            "/imatges/monstruossa/sulley/0.webp",
+            "/imatges/monstruossa/sulley/1.webp",
+            "/imatges/monstruossa/sulley/2.webp",
+            "/imatges/monstruossa/sulley/3.webp",
+            "/imatges/monstruossa/sulley/4.webp",
+            "/imatges/monstruossa/sulley/5.webp"
+          ]
+        }
+      ]
     }
   ]
 }
