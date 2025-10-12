@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Catàleg de Personatges MariArT</title>
+    <title>Catálogo de Personajes MariArT</title>
 
     <script src="https://cdn.tailwindcss.com"></script>
 
@@ -196,7 +196,7 @@
                     "productes": [
                         {
                             "nom": "Luffy",
-                            "videourl":"/imatges/onepiece/luffy/video.webm",
+                            "videoUrl":"/imatges/onepiece/luffy/video.webm",
                             "imatges":[
                                 "/imatges/onepiece/luffy/1.webp",
                                 "/imatges/onepiece/luffy/2.webp",
@@ -252,7 +252,7 @@
                         <h1 className="text-4xl md:text-5xl font-bold text-text-principal text-center sm:text-left">{producte.nom}</h1>
                         <button onClick={onTorna} className="flex items-center gap-2 bg-accent text-white font-bold py-3 px-6 rounded-2xl hover:bg-accent-hover transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-1">
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z" clipRule="evenodd" /></svg>
-                            Tornar a {producte.categoriaNom}
+                            Volver a {producte.categoriaNom}
                         </button>
                     </header>
 
@@ -293,7 +293,7 @@
                                 key="video-btn"
                                 className={`w-24 h-24 flex items-center justify-center bg-targeta rounded-2xl cursor-pointer border-4 transition-all duration-300 hover:scale-105 hover:shadow-md ${producte.videoUrl === imatgeActiva ? 'border-accent shadow-lg' : 'border-transparent'}`}
                                 onClick={() => setImatgeActiva(producte.videoUrl)}
-                                title="Mostrar animació (substitut del GIF)"
+                                title="Mostrar animación"
                             >
                                 <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-text-principal" viewBox="0 0 20 20" fill="currentColor">
                                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clipRule="evenodd" />
@@ -327,10 +327,10 @@
                 <main className="fade-in">
                     <header className="text-center py-8 px-4">
                         <h1 className="text-5xl md:text-6xl font-extrabold text-text-principal">{categoria.nom}</h1>
-                        <p className="text-xl text-text-secundari mt-2 max-w-2xl mx-auto">Tots els personatges de la nostra col·lecció de {categoria.nom}.</p>
+                        <p className="text-xl text-text-secundari mt-2 max-w-2xl mx-auto">Todos los personajes de nuestra colección de {categoria.nom}.</p>
                         <button onClick={onTorna} className="mt-4 flex items-center gap-1 mx-auto text-accent hover:text-accent-hover font-medium transition-colors">
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z" clipRule="evenodd" /></svg>
-                            Tornar a categories
+                            Volver a categories
                         </button>
                     </header>
                     <div className="container mx-auto px-4 sm:px-8">
@@ -366,8 +366,8 @@
             return (
                 <main className="fade-in">
                     <header className="text-center py-12 px-4">
-                        <h1 className="text-5xl md:text-6xl font-extrabold text-text-principal">Catàleg de personatges MariArT</h1>
-                        <p className="text-xl text-text-secundari mt-4 max-w-2xl mx-auto">Selecciona una categoria per explorar els nostres dissenys.</p>
+                        <h1 className="text-5xl md:text-6xl font-extrabold text-text-principal">Catálogo de personajes de MariArT</h1>
+                        <p className="text-xl text-text-secundari mt-4 max-w-2xl mx-auto">Selecciona una categoria para explorar nuestros diseños.</p>
                     </header>
                     <div className="container mx-auto px-4 sm:px-8">
                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
@@ -384,7 +384,7 @@
                                     </div>
                                     <div className="p-6 text-center">
                                         <h3 className="text-2xl font-bold text-text-principal">{categoria.nom}</h3>
-                                        <p className="text-text-secundari mt-1 text-sm">{categoria.productes.length} productes</p>
+                                        <p className="text-text-secundari mt-1 text-sm">{categoria.productes.length} producto{categoria.productes.length>1?"s":""}</p>
                                     </div>
                                 </div>
                             ))}
