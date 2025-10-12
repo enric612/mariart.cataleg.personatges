@@ -484,5 +484,55 @@
         }
       ]
     }
+    ,
+    {
+      "nom": "Bluey",
+      "productes": [
+        {
+          "nom": "Bluey (Crochet)",
+          "videoUrl": null,
+          "imatges": [
+            "/imatges/bluey/blueycrochet/0.webp",
+            "/imatges/bluey/blueycrochet/1.webp",
+            "/imatges/bluey/blueycrochet/2.webp",
+            "/imatges/bluey/blueycrochet/3.webp",
+            "/imatges/bluey/blueycrochet/4.webp"
+          ]
+        },
+        {
+          "nom": "Bluey (Normal)",
+          "videoUrl": "/imatges/bluey/blueynormal/video.webm",
+          "imatges": [
+            "/imatges/bluey/blueynormal/1.webp",
+            "/imatges/bluey/blueynormal/2.webp",
+            "/imatges/bluey/blueynormal/3.webp",
+            "/imatges/bluey/blueynormal/4.webp",
+            "/imatges/bluey/blueynormal/5.webp"
+          ]
+        },
+        {
+          "nom": "Bingo (Crochet)",
+          "videoUrl": "/imatges/bluey/bingocrochet/video.webm",
+          "imatges": [
+            "/imatges/bluey/bingocrochet/1.webp",
+            "/imatges/bluey/bingocrochet/2.webp",
+            "/imatges/bluey/bingocrochet/3.webp",
+            "/imatges/bluey/bingocrochet/4.webp",
+            "/imatges/bluey/bingocrochet/5.webp"
+          ]
+        },
+        {
+          "nom": "Bingo (Normal)",
+          "videoUrl": "/imatges/bluey/bingonormal/video.webm",
+          "imatges": [
+            "/imatges/bluey/bingonormal/1.webp",
+            "/imatges/bluey/bingonormal/2.webp",
+            "/imatges/bluey/bingonormal/3.webp",
+            "/imatges/bluey/bingonormal/4.webp",
+            "/imatges/bluey/bingonormal/5.webp"
+          ]
+        }
+      ]
+    }
   ]
 }
