@@ -406,6 +406,36 @@
                             ]
                         },
                         {
+                            "nom": "Gengar",
+                            "videoUrl": "/imatges/pokemon/gengar/video.webm",
+                            "imatges": [
+                                "/imatges/pokemon/gengar/1.webp",
+                                "/imatges/pokemon/gengar/2.webp",
+                                "/imatges/pokemon/gengar/3.webp",
+                                "/imatges/pokemon/gengar/4.webp"
+                            ]
+                        },
+                        {
+                            "nom": "Snorlax",
+                            "videoUrl": "/imatges/pokemon/snorlax/video.webm",
+                            "imatges": [
+                                "/imatges/pokemon/snorlax/1.webp",
+                                "/imatges/pokemon/snorlax/2.webp",
+                                "/imatges/pokemon/snorlax/3.webp"
+                            ]
+                        },
+                        {
+                            "nom": "Eevee",
+                            "videoUrl": "/imatges/pokemon/eevee/video.webm",
+                            "imatges": [
+                                "/imatges/pokemon/eevee/1.webp",
+                                "/imatges/pokemon/eevee/2.webp",
+                                "/imatges/pokemon/eevee/3.webp",
+                                "/imatges/pokemon/eevee/4.webp",
+                                "/imatges/pokemon/eevee/5.webp"
+                            ]
+                        },
+                        {
                             "nom": "Squirtle (Crochet)",
                             "videoUrl": "/imatges/pokemon/squirtlecrochet/video.webm",
                             "imatges": [
