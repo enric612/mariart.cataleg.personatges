@@ -440,6 +440,47 @@
             "/imatges/sonic/tails/5.webp",
             "/imatges/sonic/tails/6.webp"
           ]
+        },
+        {
+          "nom": "Dr. Eggman",
+          "videoUrl": "/imatges/sonic/dreggman/video.webm",
+          "imatges": [
+            "/imatges/sonic/dreggman/1.webp",
+            "/imatges/sonic/dreggman/2.webp",
+            "/imatges/sonic/dreggman/3.webp",
+            "/imatges/sonic/dreggman/4.webp"
+          ]
+        },
+        {
+          "nom": "Amy Rose",
+          "videoUrl": "/imatges/sonic/amyrose/video.webm",
+          "imatges": [
+            "/imatges/sonic/amyrose/1.webp",
+            "/imatges/sonic/amyrose/2.webp",
+            "/imatges/sonic/amyrose/3.webp",
+            "/imatges/sonic/amyrose/4.webp",
+            "/imatges/sonic/amyrose/5.webp"
+          ]
+        },
+        {
+          "nom": "Knuckles",
+          "videoUrl": "/imatges/sonic/knuckles/video.webm",
+          "imatges": [
+            "/imatges/sonic/knuckles/1.webp",
+            "/imatges/sonic/knuckles/2.webp",
+            "/imatges/sonic/knuckles/3.webp",
+            "/imatges/sonic/knuckles/4.webp"
+          ]
+        },
+        {
+          "nom": "Super Sonic",
+          "videoUrl": "/imatges/sonic/supersonic/video.webm",
+          "imatges": [
+            "/imatges/sonic/supersonic/1.webp",
+            "/imatges/sonic/supersonic/2.webp",
+            "/imatges/sonic/supersonic/3.webp",
+            "/imatges/sonic/supersonic/4.webp"
+          ]
         }
       ]
     }
