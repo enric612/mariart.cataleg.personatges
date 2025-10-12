@@ -105,6 +105,8 @@
                 window.addEventListener('scroll', handleScroll);
                 return () => window.removeEventListener('scroll', handleScroll);
             }, []);
+            // Nova fletxa cap a l'esquerra per tornar enrere
+            const { vista, onBack } = window._floatingSocialButtonsProps || {};
             return (
                 <div style={containerStyle}>
                     <a
@@ -129,29 +131,53 @@
                     >
                         <img src="/imatges/whatsapp.webp" alt="WhatsApp" style={iconStyle} />
                     </a>
-                    {showScrollBtn && (
-                        <button
-                            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-                            title="Subir arriba"
-                            style={{
-                                marginLeft: '0.7rem',
-                                width: '56px',
-                                height: '56px',
-                                display: 'flex',
-                                alignItems: 'center',
-                                justifyContent: 'center',
-                                background: 'transparent',
-                                border: 'none',
-                                borderRadius: '16px',
-                                boxShadow: '0 4px 16px rgba(0,0,0,0.15)',
-                                cursor: 'pointer',
-                                transition: 'transform 0.2s',
-                            }}
-                            onMouseOver={e => e.currentTarget.style.transform = 'scale(1.12)'}
-                            onMouseOut={e => e.currentTarget.style.transform = 'scale(1)'}
-                        >
-                            <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="#B48369" viewBox="0 0 24 24"><path d="M12 4l-7 8h4v8h6v-8h4z"/></svg>
-                        </button>
+                    {showScrollBtn && (vista === 'productes' || vista === 'detall') && (
+                        <>
+                            <button
+                                onClick={onBack}
+                                title="Tornar al llistat anterior"
+                                style={{
+                                    marginRight: '0.7rem',
+                                    width: '56px',
+                                    height: '56px',
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    justifyContent: 'center',
+                                    background: 'transparent',
+                                    border: 'none',
+                                    borderRadius: '16px',
+                                    boxShadow: '0 4px 16px rgba(0,0,0,0.15)',
+                                    cursor: 'pointer',
+                                    transition: 'transform 0.2s',
+                                }}
+                                onMouseOver={e => e.currentTarget.style.transform = 'scale(1.12)'}
+                                onMouseOut={e => e.currentTarget.style.transform = 'scale(1)'}
+                            >
+                                <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="#B48369" viewBox="0 0 24 24"><path d="M4 12l8-7v4h8v6h-8v4z"/></svg>
+                            </button>
+                            <button
+                                onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                                title="Subir arriba"
+                                style={{
+                                    marginLeft: '0.7rem',
+                                    width: '56px',
+                                    height: '56px',
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    justifyContent: 'center',
+                                    background: 'transparent',
+                                    border: 'none',
+                                    borderRadius: '16px',
+                                    boxShadow: '0 4px 16px rgba(0,0,0,0.15)',
+                                    cursor: 'pointer',
+                                    transition: 'transform 0.2s',
+                                }}
+                                onMouseOver={e => e.currentTarget.style.transform = 'scale(1.12)'}
+                                onMouseOut={e => e.currentTarget.style.transform = 'scale(1)'}
+                            >
+                                <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="#B48369" viewBox="0 0 24 24"><path d="M12 4l-7 8h4v8h6v-8h4z"/></svg>
+                            </button>
+                        </>
                     )}
                 </div>
             );
@@ -411,6 +437,11 @@
                 content = <LlistatCategories categories={categories} onCategoriaClick={handleCategoriaClick} />;
             }
 
+            // Passa la vista i el handler de tornar al FloatingSocialButtons
+            window._floatingSocialButtonsProps = {
+                vista,
+                onBack: vista === 'detall' ? handleTornaAlLlistatDeProductes : handleTornaAlLlistatDeCategories
+            };
             return (
                 <div>
                     {content}
