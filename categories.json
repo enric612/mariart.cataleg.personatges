@@ -1,619 +1,688 @@
 {
-  "categories": [
-    {
-      "nom": "Harry Potter",
-      "productes": [
+    "categories": [
         {
-          "nom": "Harry Potter",
-          "videoUrl": "/imatges/HP/HP/video.webm",
-          "imatges": [
-            "/imatges/HP/HP/1.webp",
-            "/imatges/HP/HP/2.webp",
-            "/imatges/HP/HP/3.webp",
-            "/imatges/HP/HP/4.webp",
-            "/imatges/HP/HP/5.webp",
-            "/imatges/HP/HP/6.webp"
-          ]
+            "nom": "Harry Potter",
+            "productes": [
+                {
+                    "nom": "Harry Potter",
+                    "videoUrl": "/imatges/HP/HP/video.webm",
+                    "imatges": [
+                        "/imatges/HP/HP/1.webp",
+                        "/imatges/HP/HP/2.webp",
+                        "/imatges/HP/HP/3.webp",
+                        "/imatges/HP/HP/4.webp",
+                        "/imatges/HP/HP/5.webp",
+                        "/imatges/HP/HP/6.webp"
+                    ]
+                }
+            ]
+        },
+        {
+            "nom": "Lilo & Stitch",
+            "productes": [
+                {
+                    "nom": "Lilo",
+                    "videoUrl": "/imatges/lilostitch/lilo/video.webm",
+                    "imatges": [
+                        "/imatges/lilostitch/lilo/1.webp",
+                        "/imatges/lilostitch/lilo/2.webp",
+                        "/imatges/lilostitch/lilo/3.webp",
+                        "/imatges/lilostitch/lilo/4.webp",
+                        "/imatges/lilostitch/lilo/5.webp",
+                        "/imatges/lilostitch/lilo/6.webp"
+                    ]
+                },
+                {
+                    "nom": "Stitch",
+                    "videoUrl": "/imatges/lilostitch/stitch/video.webm",
+                    "imatges": [
+                        "/imatges/lilostitch/stitch/1.webp",
+                        "/imatges/lilostitch/stitch/2.webp",
+                        "/imatges/lilostitch/stitch/3.webp",
+                        "/imatges/lilostitch/stitch/4.webp"
+                    ]
+                },
+                {
+                    "nom": "Stitch (sentado)",
+                    "videoUrl": null,
+                    "imatges": [
+                        "/imatges/lilostitch/stitchsentat/1.webp",
+                        "/imatges/lilostitch/stitchsentat/2.webp",
+                        "/imatges/lilostitch/stitchsentat/3.webp",
+                        "/imatges/lilostitch/stitchsentat/4.webp",
+                        "/imatges/lilostitch/stitchsentat/6.webp"
+                    ]
+                },
+                {
+                    "nom": "Mini Stitch",
+                    "videoUrl": "/imatges/lilostitch/ministitch/video.webm",
+                    "imatges": [
+                        "/imatges/lilostitch/ministitch/1.webp",
+                        "/imatges/lilostitch/ministitch/2.webp",
+                        "/imatges/lilostitch/ministitch/3.webp"
+                    ]
+                },
+                {
+                    "nom": "Angel",
+                    "videoUrl": "/imatges/lilostitch/angel/video.webm",
+                    "imatges": [
+                        "/imatges/lilostitch/angel/1.webp",
+                        "/imatges/lilostitch/angel/2.webp",
+                        "/imatges/lilostitch/angel/3.webp",
+                        "/imatges/lilostitch/angel/4.webp"
+                    ]
+                },
+                {
+                    "nom": "Angel (sentada)",
+                    "videoUrl": "/imatges/lilostitch/angelsenta/video.webm",
+                    "imatges": [
+                        "/imatges/lilostitch/angelsenta/1.webp",
+                        "/imatges/lilostitch/angelsenta/2.webp",
+                        "/imatges/lilostitch/angelsenta/3.webp",
+                        "/imatges/lilostitch/angelsenta/4.webp"
+                    ]
+                },
+                {
+                    "nom": "Leroy",
+                    "videoUrl": "/imatges/lilostitch/leroy/video.webm",
+                    "imatges": [
+                        "/imatges/lilostitch/leroy/1.webp",
+                        "/imatges/lilostitch/leroy/2.webp",
+                        "/imatges/lilostitch/leroy/3.webp",
+                        "/imatges/lilostitch/leroy/4.webp"
+                    ]
+                }
+            ]
+        },
+        {
+            "nom": "Demon Slayer",
+            "productes": [
+                {
+                    "nom": "Tanjiro",
+                    "videoUrl": "/imatges/DemonSlayer/Tanjiro/video.webm",
+                    "imatges": [
+                        "/imatges/DemonSlayer/Tanjiro/1.webp",
+                        "/imatges/DemonSlayer/Tanjiro/2.webp",
+                        "/imatges/DemonSlayer/Tanjiro/3.webp",
+                        "/imatges/DemonSlayer/Tanjiro/4.webp",
+                        "/imatges/DemonSlayer/Tanjiro/5.webp"
+                    ]
+                }
+            ]
+        },
+        {
+            "nom": "The Legend of Zelda",
+            "productes": [
+                {
+                    "nom": "Link",
+                    "videoUrl": "/imatges/Zelda/Link/video.webm",
+                    "imatges": [
+                        "/imatges/Zelda/Link/1.webp",
+                        "/imatges/Zelda/Link/2.webp",
+                        "/imatges/Zelda/Link/3.webp",
+                        "/imatges/Zelda/Link/4.webp",
+                        "/imatges/Zelda/Link/5.webp",
+                        "/imatges/Zelda/Link/6.webp"
+                    ]
+                }
+            ]
+        },
+        {
+            "nom": "Bola de Drac/Bola de Dragón (Dragon Ball)",
+            "productes": [
+                {
+                    "nom": "Goku",
+                    "videoUrl": null,
+                    "imatges": [
+                        "/imatges/bdd/goku/1.webp",
+                        "/imatges/bdd/goku/2.webp",
+                        "/imatges/bdd/goku/3.webp",
+                        "/imatges/bdd/goku/4.webp",
+                        "/imatges/bdd/goku/5.webp"
+                    ]
+                },
+                {
+                    "nom": "Vegeta mini",
+                    "videoUrl": "/imatges/bdd/vegeta/video.webm",
+                    "imatges": [
+                        "/imatges/bdd/vegeta/1.webp",
+                        "/imatges/bdd/vegeta/4.webp"
+                    ]
+                },
+                {
+                    "nom": "Boo Kid",
+                    "videoUrl": "/imatges/bdd/boo/video.webm",
+                    "imatges": [
+                        "/imatges/bdd/boo/1.webp",
+                        "/imatges/bdd/boo/2.webp",
+                        "/imatges/bdd/boo/3.webp"
+                    ]
+                },
+                {
+                    "nom": "Boo",
+                    "videoUrl": "/imatges/bdd/boogordo/video.webm",
+                    "imatges": [
+                        "/imatges/bdd/boogordo/1.webp",
+                        "/imatges/bdd/boogordo/2.webp",
+                        "/imatges/bdd/boogordo/3.webp",
+                        "/imatges/bdd/boogordo/4.webp",
+                        "/imatges/bdd/boogordo/5.webp"
+                    ]
+                },
+                {
+                    "nom": "Frizer (Freeza) \"Crochet\"",
+                    "videoUrl": "/imatges/bdd/frizer/video.webm",
+                    "imatges": [
+                        "/imatges/bdd/frizer/1.webp",
+                        "/imatges/bdd/frizer/2.webp",
+                        "/imatges/bdd/frizer/3.webp",
+                        "/imatges/bdd/frizer/4.webp",
+                        "/imatges/bdd/frizer/5.webp",
+                        "/imatges/bdd/frizer/6.webp"
+                    ]
+                },
+                {
+                    "nom": "Frizer (Freeza) \"Normal\"",
+                    "videoUrl": "/imatges/bdd/frizer/video.webm",
+                    "imatges": [
+                        "/imatges/bdd/frizern/1.webp",
+                        "/imatges/bdd/frizern/2.webp",
+                        "/imatges/bdd/frizern/3.webp",
+                        "/imatges/bdd/frizern/4.webp"
+                    ]
+                }
+            ]
+        },
+        {
+            "nom": "One Piece",
+            "productes": [
+                {
+                    "nom": "Luffy",
+                    "videoUrl": "/imatges/onepiece/luffy/video.webm",
+                    "imatges": [
+                        "/imatges/onepiece/luffy/1.webp",
+                        "/imatges/onepiece/luffy/2.webp",
+                        "/imatges/onepiece/luffy/3.webp",
+                        "/imatges/onepiece/luffy/4.webp",
+                        "/imatges/onepiece/luffy/5.webp"
+                    ]
+                },
+                {
+                    "nom": "Franky",
+                    "videoUrl": "/imatges/onepiece/franky/video.webm",
+                    "imatges": [
+                        "/imatges/onepiece/franky/1.webp",
+                        "/imatges/onepiece/franky/2.webp",
+                        "/imatges/onepiece/franky/3.webp",
+                        "/imatges/onepiece/franky/4.webp",
+                        "/imatges/onepiece/franky/5.webp"
+                    ]
+                },
+                {
+                    "nom": "Zoro (2 Opciones)",
+                    "videoUrl": null,
+                    "imatges": [
+                        "/imatges/onepiece/zoro/1.webp",
+                        "/imatges/onepiece/zoro/2.webp",
+                        "/imatges/onepiece/zoro/3.webp",
+                        "/imatges/onepiece/zoro/4.webp",
+                        "/imatges/onepiece/zoro/5.webp"
+                    ]
+                },
+                {
+                    "nom": "Usopp",
+                    "videoUrl": "/imatges/onepiece/usopp/video.webm",
+                    "imatges": [
+                        "/imatges/onepiece/usopp/1.webp",
+                        "/imatges/onepiece/usopp/2.webp",
+                        "/imatges/onepiece/usopp/3.webp",
+                        "/imatges/onepiece/usopp/4.webp"
+                    ]
+                },
+                {
+                    "nom": "Sanji (2 Opciones)",
+                    "videoUrl": "/imatges/onepiece/sanji/video.webm",
+                    "imatges": [
+                        "/imatges/onepiece/sanji/1.webp",
+                        "/imatges/onepiece/sanji/2.webp",
+                        "/imatges/onepiece/sanji/3.webp",
+                        "/imatges/onepiece/sanji/4.webp",
+                        "/imatges/onepiece/sanji/5.webp",
+                        "/imatges/onepiece/sanji/6.webp",
+                        "/imatges/onepiece/sanji/7.webp"
+                    ]
+                },
+                {
+                    "nom": "Nami",
+                    "videoUrl": "/imatges/onepiece/nami/video.webm",
+                    "imatges": [
+                        "/imatges/onepiece/nami/1.webp",
+                        "/imatges/onepiece/nami/2.webp",
+                        "/imatges/onepiece/nami/3.webp"
+                    ]
+                },
+                {
+                    "nom": "Nico Robin",
+                    "videoUrl": "/imatges/onepiece/nicorobin/video.webm",
+                    "imatges": [
+                        "/imatges/onepiece/nicorobin/1.webp",
+                        "/imatges/onepiece/nicorobin/2.webp",
+                        "/imatges/onepiece/nicorobin/3.webp",
+                        "/imatges/onepiece/nicorobin/4.webp"
+                    ]
+                },
+                {
+                    "nom": "Jinbe",
+                    "videoUrl": "/imatges/onepiece/jinbe/video.webm",
+                    "imatges": [
+                        "/imatges/onepiece/jinbe/1.webp",
+                        "/imatges/onepiece/jinbe/2.webp",
+                        "/imatges/onepiece/jinbe/3.webp",
+                        "/imatges/onepiece/jinbe/4.webp"
+                    ]
+                },
+                {
+                    "nom": "Brook",
+                    "videoUrl": "/imatges/onepiece/brook/video.webm",
+                    "imatges": [
+                        "/imatges/onepiece/brook/1.webp",
+                        "/imatges/onepiece/brook/2.webp",
+                        "/imatges/onepiece/brook/3.webp"
+                    ]
+                }
+            ]
+        },
+        {
+            "nom": "Naruto",
+            "productes": [
+                {
+                    "nom": "Naruto",
+                    "videoUrl": "/imatges/naruto/naruto/video.webm",
+                    "imatges": [
+                        "/imatges/naruto/naruto/1.webp",
+                        "/imatges/naruto/naruto/2.webp",
+                        "/imatges/naruto/naruto/3.webp",
+                        "/imatges/naruto/naruto/4.webp",
+                        "/imatges/naruto/naruto/5.webp",
+                        "/imatges/naruto/naruto/6.webp"
+                    ]
+                }
+            ]
+        },
+        {
+            "nom": "Super Mario (Crochet)",
+            "productes": [
+                {
+                    "nom": "Super Mario",
+                    "videoUrl": "/imatges/supermario/mario/video.webm",
+                    "imatges": [
+                        "/imatges/supermario/mario/1.webp",
+                        "/imatges/supermario/mario/2.webp",
+                        "/imatges/supermario/mario/3.webp",
+                        "/imatges/supermario/mario/4.webp",
+                        "/imatges/supermario/mario/5.webp"
+                    ]
+                },
+                {
+                    "nom": "Super Mario (Normal)",
+                    "videoUrl": "/imatges/supermario/marion/video.webm",
+                    "imatges": [
+                        "/imatges/supermario/marion/1.webp",
+                        "/imatges/supermario/marion/2.webp",
+                        "/imatges/supermario/marion/3.webp",
+                        "/imatges/supermario/marion/4.webp",
+                        "/imatges/supermario/marion/5.webp",
+                        "/imatges/supermario/marion/6.webp"
+                    ]
+                },
+                {
+                    "nom": "Luigi (Crochet)",
+                    "videoUrl": "/imatges/supermario/luigi/video.webm",
+                    "imatges": [
+                        "/imatges/supermario/luigi/1.webp",
+                        "/imatges/supermario/luigi/2.webp",
+                        "/imatges/supermario/luigi/3.webp",
+                        "/imatges/supermario/luigi/4.webp"
+                    ]
+                },
+                {
+                    "nom": "Luigi (Normal)",
+                    "videoUrl": "/imatges/supermario/luigin/video.webm",
+                    "imatges": [
+                        "/imatges/supermario/luigin/1.webp",
+                        "/imatges/supermario/luigin/2.webp",
+                        "/imatges/supermario/luigin/3.webp",
+                        "/imatges/supermario/luigin/4.webp"
+                    ]
+                },
+                {
+                    "nom": "Yoshi (Crochet)",
+                    "videoUrl": "/imatges/supermario/yoshi/video.webm",
+                    "imatges": [
+                        "/imatges/supermario/yoshi/1.webp",
+                        "/imatges/supermario/yoshi/2.webp",
+                        "/imatges/supermario/yoshi/3.webp",
+                        "/imatges/supermario/yoshi/4.webp"
+                    ]
+                },
+                {
+                    "nom": "Yoshi (Normal)",
+                    "videoUrl": "/imatges/supermario/yoshin/video.webm",
+                    "imatges": [
+                        "/imatges/supermario/yoshin/1.webp",
+                        "/imatges/supermario/yoshin/2.webp",
+                        "/imatges/supermario/yoshin/3.webp",
+                        "/imatges/supermario/yoshin/4.webp"
+                    ]
+                }
+            ]
+        },
+        {
+            "nom": "Labubu FanArt",
+            "productes": [
+                {
+                    "nom": "Luffy",
+                    "videoUrl": "/imatges/labubu/luffy/video.webm",
+                    "imatges": [
+                        "/imatges/labubu/luffy/1.webp",
+                        "/imatges/labubu/luffy/2.webp",
+                        "/imatges/labubu/luffy/3.webp"
+                    ]
+                }
+            ]
+        },
+        {
+                    "nom": "Pokemon",
+                    "productes": [
+                        {
+                            "nom": "Squirtle (Normal)",
+                            "videoUrl": "/imatges/pokemon/squirtlenormal/video.webm",
+                            "imatges": [
+                                "/imatges/pokemon/squirtlenormal/1.webp",
+                                "/imatges/pokemon/squirtlenormal/2.webp",
+                                "/imatges/pokemon/squirtlenormal/3.webp",
+                                "/imatges/pokemon/squirtlenormal/4.webp",
+                                "/imatges/pokemon/squirtlenormal/5.webp"
+                            ]
+                        },
+                        {
+                            "nom": "Squirtle (Crochet)",
+                            "videoUrl": "/imatges/pokemon/squirtlecrochet/video.webm",
+                            "imatges": [
+                                "/imatges/pokemon/squirtlecrochet/1.webp",
+                                "/imatges/pokemon/squirtlecrochet/2.webp",
+                                "/imatges/pokemon/squirtlecrochet/3.webp",
+                                "/imatges/pokemon/squirtlecrochet/4.webp",
+                                "/imatges/pokemon/squirtlecrochet/5.webp"
+                            ]
+                        },
+                        {
+                            "nom": "Charmander (Normal)",
+                            "videoUrl": "/imatges/pokemon/charmandernormal/video.webm",
+                            "imatges": [
+                                "/imatges/pokemon/charmandernormal/1.webp",
+                                "/imatges/pokemon/charmandernormal/2.webp",
+                                "/imatges/pokemon/charmandernormal/3.webp",
+                                "/imatges/pokemon/charmandernormal/4.webp",
+                                "/imatges/pokemon/charmandernormal/5.webp",
+                                "/imatges/pokemon/charmandernormal/6.webp"
+                            ]
+                        },
+                        {
+                            "nom": "Charmander (Crochet)",
+                            "videoUrl": "/imatges/pokemon/charmandercrochet/video.webm",
+                            "imatges": [
+                                "/imatges/pokemon/charmandercrochet/1.webp",
+                                "/imatges/pokemon/charmandercrochet/2.webp",
+                                "/imatges/pokemon/charmandercrochet/3.webp",
+                                "/imatges/pokemon/charmandercrochet/4.webp",
+                                "/imatges/pokemon/charmandercrochet/5.webp"
+                            ]
+                        },
+                        {
+                            "nom": "Bulbasur (Normal)",
+                            "videoUrl": "/imatges/pokemon/bulbasurnormal/video.webm",
+                            "imatges": [
+                                "/imatges/pokemon/bulbasurnormal/1.webp",
+                                "/imatges/pokemon/bulbasurnormal/2.webp",
+                                "/imatges/pokemon/bulbasurnormal/3.webp",
+                                "/imatges/pokemon/bulbasurnormal/4.webp"
+                            ]
+                        },
+                        {
+                            "nom": "Bulbasur (Crochet)",
+                            "videoUrl": "/imatges/pokemon/bulbasurcrochet/video.webm",
+                            "imatges": [
+                                "/imatges/pokemon/bulbasurcrochet/1.webp",
+                                "/imatges/pokemon/bulbasurcrochet/2.webp",
+                                "/imatges/pokemon/bulbasurcrochet/3.webp",
+                                "/imatges/pokemon/bulbasurcrochet/4.webp"
+                            ]
+                        }
+                    ]
+        },
+        {
+            "nom": "Sonic",
+            "productes": [
+                {
+                    "nom": "Sonic",
+                    "videoUrl": null,
+                    "imatges": [
+                        "/imatges/sonic/sonic/1.webp",
+                        "/imatges/sonic/sonic/2.webp",
+                        "/imatges/sonic/sonic/3.webp",
+                        "/imatges/sonic/sonic/4.webp"
+                    ]
+                },
+                {
+                    "nom": "Shadow",
+                    "videoUrl": "/imatges/sonic/shadow/video.webm",
+                    "imatges": [
+                        "/imatges/sonic/shadow/1.webp",
+                        "/imatges/sonic/shadow/2.webp",
+                        "/imatges/sonic/shadow/3.webp",
+                        "/imatges/sonic/shadow/4.webp",
+                        "/imatges/sonic/shadow/5.webp",
+                        "/imatges/sonic/shadow/6.webp",
+                        "/imatges/sonic/shadow/7.webp",
+                        "/imatges/sonic/shadow/8.webp"
+                    ]
+                },
+                {
+                    "nom": "Silver",
+                    "videoUrl": null,
+                    "imatges": [
+                        "/imatges/sonic/silver/1.webp",
+                        "/imatges/sonic/silver/2.webp",
+                        "/imatges/sonic/silver/3.webp",
+                        "/imatges/sonic/silver/4.webp",
+                        "/imatges/sonic/silver/5.webp"
+                    ]
+                },
+                {
+                    "nom": "Tails",
+                    "videoUrl": "/imatges/sonic/tails/video.webm",
+                    "imatges": [
+                        "/imatges/sonic/tails/1.webp",
+                        "/imatges/sonic/tails/2.webp",
+                        "/imatges/sonic/tails/3.webp",
+                        "/imatges/sonic/tails/4.webp",
+                        "/imatges/sonic/tails/5.webp",
+                        "/imatges/sonic/tails/6.webp"
+                    ]
+                },
+                {
+                    "nom": "Dr. Eggman",
+                    "videoUrl": "/imatges/sonic/dreggman/video.webm",
+                    "imatges": [
+                        "/imatges/sonic/dreggman/1.webp",
+                        "/imatges/sonic/dreggman/2.webp",
+                        "/imatges/sonic/dreggman/3.webp",
+                        "/imatges/sonic/dreggman/4.webp"
+                    ]
+                },
+                {
+                    "nom": "Amy Rose",
+                    "videoUrl": "/imatges/sonic/amyrose/video.webm",
+                    "imatges": [
+                        "/imatges/sonic/amyrose/1.webp",
+                        "/imatges/sonic/amyrose/2.webp",
+                        "/imatges/sonic/amyrose/3.webp",
+                        "/imatges/sonic/amyrose/4.webp",
+                        "/imatges/sonic/amyrose/5.webp"
+                    ]
+                },
+                {
+                    "nom": "Knuckles",
+                    "videoUrl": "/imatges/sonic/knuckles/video.webm",
+                    "imatges": [
+                        "/imatges/sonic/knuckles/1.webp",
+                        "/imatges/sonic/knuckles/2.webp",
+                        "/imatges/sonic/knuckles/3.webp",
+                        "/imatges/sonic/knuckles/4.webp"
+                    ]
+                },
+                {
+                    "nom": "Super Sonic",
+                    "videoUrl": "/imatges/sonic/supersonic/video.webm",
+                    "imatges": [
+                        "/imatges/sonic/supersonic/1.webp",
+                        "/imatges/sonic/supersonic/2.webp",
+                        "/imatges/sonic/supersonic/3.webp",
+                        "/imatges/sonic/supersonic/4.webp"
+                    ]
+                }
+            ]
+        },
+        {
+            "nom": "Bluey",
+            "productes": [
+                {
+                    "nom": "Bluey (Crochet)",
+                    "videoUrl": null,
+                    "imatges": [
+                        "/imatges/bluey/blueycrochet/0.webp",
+                        "/imatges/bluey/blueycrochet/1.webp",
+                        "/imatges/bluey/blueycrochet/2.webp",
+                        "/imatges/bluey/blueycrochet/3.webp",
+                        "/imatges/bluey/blueycrochet/4.webp"
+                    ]
+                },
+                {
+                    "nom": "Bluey (Normal)",
+                    "videoUrl": "/imatges/bluey/blueynormal/video.webm",
+                    "imatges": [
+                        "/imatges/bluey/blueynormal/1.webp",
+                        "/imatges/bluey/blueynormal/2.webp",
+                        "/imatges/bluey/blueynormal/3.webp",
+                        "/imatges/bluey/blueynormal/4.webp",
+                        "/imatges/bluey/blueynormal/5.webp"
+                    ]
+                },
+                {
+                    "nom": "Bingo (Crochet)",
+                    "videoUrl": "/imatges/bluey/bingocrochet/video.webm",
+                    "imatges": [
+                        "/imatges/bluey/bingocrochet/1.webp",
+                        "/imatges/bluey/bingocrochet/2.webp",
+                        "/imatges/bluey/bingocrochet/3.webp",
+                        "/imatges/bluey/bingocrochet/4.webp",
+                        "/imatges/bluey/bingocrochet/5.webp"
+                    ]
+                },
+                {
+                    "nom": "Bingo (Normal)",
+                    "videoUrl": "/imatges/bluey/bingonormal/video.webm",
+                    "imatges": [
+                        "/imatges/bluey/bingonormal/1.webp",
+                        "/imatges/bluey/bingonormal/2.webp",
+                        "/imatges/bluey/bingonormal/3.webp",
+                        "/imatges/bluey/bingonormal/4.webp",
+                        "/imatges/bluey/bingonormal/5.webp"
+                    ]
+                }
+            ]
+        },
+        {
+            "nom": "Toothless",
+            "productes": [
+                {
+                    "nom": "Toothless",
+                    "videoUrl": "/imatges/toothless/toothless/video.webm",
+                    "imatges": [
+                        "/imatges/toothless/toothless/1.webp",
+                        "/imatges/toothless/toothless/2.webp",
+                        "/imatges/toothless/toothless/3.webp",
+                        "/imatges/toothless/toothless/4.webp"
+                    ]
+                }
+            ]
+        },
+        {
+            "nom": "Brainrot",
+            "productes": [
+                {
+                    "nom": "Tung Tung Tung Sahur",
+                    "videoUrl": "/imatges/brainrot/tungtungtungsahur/video.webm",
+                    "imatges": [
+                        "/imatges/brainrot/tungtungtungsahur/1.webp",
+                        "/imatges/brainrot/tungtungtungsahur/2.webp",
+                        "/imatges/brainrot/tungtungtungsahur/3.webp"
+                    ]
+                }
+            ]
+        },
+        {
+            "productes": [
+                {
+                    "nom": "Derpy Tiger",
+                    "videoUrl": "/imatges/kpopdemonhunters/derpytiger/video.webm",
+                    "imatges": [
+                        "/imatges/kpopdemonhunters/derpytiger/1.webp",
+                        "/imatges/kpopdemonhunters/derpytiger/2.webp",
+                        "/imatges/kpopdemonhunters/derpytiger/3.webp",
+                        "/imatges/kpopdemonhunters/derpytiger/4.webp",
+                        "/imatges/kpopdemonhunters/derpytiger/5.webp"
+                    ]
+                },
+                {
+                    "nom": "Sussy Bird",
+                    "videoUrl": "/imatges/kpopdemonhunters/sussybird/video.webm",
+                    "imatges": [
+                        "/imatges/kpopdemonhunters/sussybird/1.webp",
+                        "/imatges/kpopdemonhunters/sussybird/2.webp",
+                        "/imatges/kpopdemonhunters/sussybird/3.webp",
+                        "/imatges/kpopdemonhunters/sussybird/4.webp"
+                    ]
+                }
+            ]
+        },
+        {
+            "nom": "Monstruos S.A.",
+            "productes": [
+                {
+                    "nom": "Mike Wazowski",
+                    "videoUrl": "/imatges/monstruossa/mikewazowski/video.webm",
+                    "imatges": [
+                        "/imatges/monstruossa/mikewazowski/1.webp",
+                        "/imatges/monstruossa/mikewazowski/2.webp",
+                        "/imatges/monstruossa/mikewazowski/3.webp",
+                        "/imatges/monstruossa/mikewazowski/4.webp"
+                    ]
+                },
+                {
+                    "nom": "Sulley",
+                    "videoUrl": "/imatges/monstruossa/sulley/video.webm",
+                    "imatges": [
+                        "/imatges/monstruossa/sulley/0.webp",
+                        "/imatges/monstruossa/sulley/1.webp",
+                        "/imatges/monstruossa/sulley/2.webp",
+                        "/imatges/monstruossa/sulley/3.webp",
+                        "/imatges/monstruossa/sulley/4.webp",
+                        "/imatges/monstruossa/sulley/5.webp"
+                    ]
+                }
+            ]
         }
-      ]
-    },
-    {
-      "nom": "Lilo & Stitch",
-      "productes": [
-        {
-          "nom": "Lilo",
-          "videoUrl": "/imatges/lilostitch/lilo/video.webm",
-          "imatges": [
-            "/imatges/lilostitch/lilo/1.webp",
-            "/imatges/lilostitch/lilo/2.webp",
-            "/imatges/lilostitch/lilo/3.webp",
-            "/imatges/lilostitch/lilo/4.webp",
-            "/imatges/lilostitch/lilo/5.webp",
-            "/imatges/lilostitch/lilo/6.webp"
-          ]
-        },
-        {
-          "nom": "Stitch",
-          "videoUrl": "/imatges/lilostitch/stitch/video.webm",
-          "imatges": [
-            "/imatges/lilostitch/stitch/1.webp",
-            "/imatges/lilostitch/stitch/2.webp",
-            "/imatges/lilostitch/stitch/3.webp",
-            "/imatges/lilostitch/stitch/4.webp"
-          ]
-        },
-        {
-          "nom": "Stitch (sentado)",
-          "videoUrl": null,
-          "imatges": [
-            "/imatges/lilostitch/stitchsentat/1.webp",
-            "/imatges/lilostitch/stitchsentat/2.webp",
-            "/imatges/lilostitch/stitchsentat/3.webp",
-            "/imatges/lilostitch/stitchsentat/4.webp",
-            "/imatges/lilostitch/stitchsentat/6.webp"
-          ]
-        },
-        {
-          "nom": "Mini Stitch",
-          "videoUrl": "/imatges/lilostitch/ministitch/video.webm",
-          "imatges": [
-            "/imatges/lilostitch/ministitch/1.webp",
-            "/imatges/lilostitch/ministitch/2.webp",
-            "/imatges/lilostitch/ministitch/3.webp"
-          ]
-        },
-        {
-          "nom": "Angel",
-          "videoUrl": "/imatges/lilostitch/angel/video.webm",
-          "imatges": [
-            "/imatges/lilostitch/angel/1.webp",
-            "/imatges/lilostitch/angel/2.webp",
-            "/imatges/lilostitch/angel/3.webp",
-            "/imatges/lilostitch/angel/4.webp"
-          ]
-        },
-        {
-          "nom": "Angel (sentada)",
-          "videoUrl": "/imatges/lilostitch/angelsenta/video.webm",
-          "imatges": [
-            "/imatges/lilostitch/angelsenta/1.webp",
-            "/imatges/lilostitch/angelsenta/2.webp",
-            "/imatges/lilostitch/angelsenta/3.webp",
-            "/imatges/lilostitch/angelsenta/4.webp"
-          ]
-        },
-        {
-          "nom": "Leroy",
-          "videoUrl": "/imatges/lilostitch/leroy/video.webm",
-          "imatges": [
-            "/imatges/lilostitch/leroy/1.webp",
-            "/imatges/lilostitch/leroy/2.webp",
-            "/imatges/lilostitch/leroy/3.webp",
-            "/imatges/lilostitch/leroy/4.webp"
-          ]
-        }
-      ]
-    },
-    {
-      "nom": "Demon Slayer",
-      "productes": [
-        {
-          "nom": "Tanjiro",
-          "videoUrl": "/imatges/DemonSlayer/Tanjiro/video.webm",
-          "imatges": [
-            "/imatges/DemonSlayer/Tanjiro/1.webp",
-            "/imatges/DemonSlayer/Tanjiro/2.webp",
-            "/imatges/DemonSlayer/Tanjiro/3.webp",
-            "/imatges/DemonSlayer/Tanjiro/4.webp",
-            "/imatges/DemonSlayer/Tanjiro/5.webp"
-          ]
-        }
-      ]
-    },
-    {
-      "nom": "The Legend of Zelda",
-      "productes": [
-        {
-          "nom": "Link",
-          "videoUrl": "/imatges/Zelda/Link/video.webm",
-          "imatges": [
-            "/imatges/Zelda/Link/1.webp",
-            "/imatges/Zelda/Link/2.webp",
-            "/imatges/Zelda/Link/3.webp",
-            "/imatges/Zelda/Link/4.webp",
-            "/imatges/Zelda/Link/5.webp",
-            "/imatges/Zelda/Link/6.webp"
-          ]
-        }
-      ]
-    },
-    {
-      "nom": "Bola de Drac/Bola de Dragón (Dragon Ball)",
-      "productes": [
-        {
-          "nom": "Goku",
-          "videoUrl": null,
-          "imatges": [
-            "/imatges/bdd/goku/1.webp",
-            "/imatges/bdd/goku/2.webp",
-            "/imatges/bdd/goku/3.webp",
-            "/imatges/bdd/goku/4.webp",
-            "/imatges/bdd/goku/5.webp"
-          ]
-        },
-        {
-          "nom": "Vegeta mini",
-          "videoUrl": "/imatges/bdd/vegeta/video.webm",
-          "imatges": [
-            "/imatges/bdd/vegeta/1.webp",
-            "/imatges/bdd/vegeta/4.webp"
-          ]
-        },
-        {
-          "nom": "Boo Kid",
-          "videoUrl": "/imatges/bdd/boo/video.webm",
-          "imatges": [
-            "/imatges/bdd/boo/1.webp",
-            "/imatges/bdd/boo/2.webp",
-            "/imatges/bdd/boo/3.webp"
-          ]
-        },
-        {
-          "nom": "Boo",
-          "videoUrl": "/imatges/bdd/boogordo/video.webm",
-          "imatges": [
-            "/imatges/bdd/boogordo/1.webp",
-            "/imatges/bdd/boogordo/2.webp",
-            "/imatges/bdd/boogordo/3.webp",
-            "/imatges/bdd/boogordo/4.webp",
-            "/imatges/bdd/boogordo/5.webp"
-          ]
-        },
-        {
-          "nom": "Frizer (Freeza) \"Crochet\"",
-          "videoUrl": "/imatges/bdd/frizer/video.webm",
-          "imatges": [
-            "/imatges/bdd/frizer/1.webp",
-            "/imatges/bdd/frizer/2.webp",
-            "/imatges/bdd/frizer/3.webp",
-            "/imatges/bdd/frizer/4.webp",
-            "/imatges/bdd/frizer/5.webp",
-            "/imatges/bdd/frizer/6.webp"
-          ]
-        },
-        {
-          "nom": "Frizer (Freeza) \"Normal\"",
-          "videoUrl": "/imatges/bdd/frizer/video.webm",
-          "imatges": [
-            "/imatges/bdd/frizern/1.webp",
-            "/imatges/bdd/frizern/2.webp",
-            "/imatges/bdd/frizern/3.webp",
-            "/imatges/bdd/frizern/4.webp"
-          ]
-        }
-      ]
-    },
-    {
-      "nom": "One Piece",
-      "productes": [
-        {
-          "nom": "Luffy",
-          "videoUrl": "/imatges/onepiece/luffy/video.webm",
-          "imatges": [
-            "/imatges/onepiece/luffy/1.webp",
-            "/imatges/onepiece/luffy/2.webp",
-            "/imatges/onepiece/luffy/3.webp",
-            "/imatges/onepiece/luffy/4.webp",
-            "/imatges/onepiece/luffy/5.webp"
-          ]
-        },
-        {
-          "nom": "Franky",
-          "videoUrl": "/imatges/onepiece/franky/video.webm",
-          "imatges": [
-            "/imatges/onepiece/franky/1.webp",
-            "/imatges/onepiece/franky/2.webp",
-            "/imatges/onepiece/franky/3.webp",
-            "/imatges/onepiece/franky/4.webp",
-            "/imatges/onepiece/franky/5.webp"
-          ]
-        },
-        {
-          "nom": "Zoro (2 Opciones)",
-          "videoUrl": null,
-          "imatges": [
-            "/imatges/onepiece/zoro/1.webp",
-            "/imatges/onepiece/zoro/2.webp",
-            "/imatges/onepiece/zoro/3.webp",
-            "/imatges/onepiece/zoro/4.webp",
-            "/imatges/onepiece/zoro/5.webp"
-          ]
-        },
-        {
-          "nom": "Usopp",
-          "videoUrl": "/imatges/onepiece/usopp/video.webm",
-          "imatges": [
-            "/imatges/onepiece/usopp/1.webp",
-            "/imatges/onepiece/usopp/2.webp",
-            "/imatges/onepiece/usopp/3.webp",
-            "/imatges/onepiece/usopp/4.webp"
-          ]
-        },
-        {
-          "nom": "Sanji (2 Opciones)",
-          "videoUrl": "/imatges/onepiece/sanji/video.webm",
-          "imatges": [
-            "/imatges/onepiece/sanji/1.webp",
-            "/imatges/onepiece/sanji/2.webp",
-            "/imatges/onepiece/sanji/3.webp",
-            "/imatges/onepiece/sanji/4.webp",
-            "/imatges/onepiece/sanji/5.webp",
-            "/imatges/onepiece/sanji/6.webp",
-            "/imatges/onepiece/sanji/7.webp"
-          ]
-        },
-        {
-          "nom": "Nami",
-          "videoUrl": "/imatges/onepiece/nami/video.webm",
-          "imatges": [
-            "/imatges/onepiece/nami/1.webp",
-            "/imatges/onepiece/nami/2.webp",
-            "/imatges/onepiece/nami/3.webp"
-          ]
-        },
-        {
-          "nom": "Nico Robin",
-          "videoUrl": "/imatges/onepiece/nicorobin/video.webm",
-          "imatges": [
-            "/imatges/onepiece/nicorobin/1.webp",
-            "/imatges/onepiece/nicorobin/2.webp",
-            "/imatges/onepiece/nicorobin/3.webp",
-            "/imatges/onepiece/nicorobin/4.webp"
-          ]
-        },
-        {
-          "nom": "Jinbe",
-          "videoUrl": "/imatges/onepiece/jinbe/video.webm",
-          "imatges": [
-            "/imatges/onepiece/jinbe/1.webp",
-            "/imatges/onepiece/jinbe/2.webp",
-            "/imatges/onepiece/jinbe/3.webp",
-            "/imatges/onepiece/jinbe/4.webp"
-          ]
-        },
-        {
-          "nom": "Brook",
-          "videoUrl": "/imatges/onepiece/brook/video.webm",
-          "imatges": [
-            "/imatges/onepiece/brook/1.webp",
-            "/imatges/onepiece/brook/2.webp",
-            "/imatges/onepiece/brook/3.webp"
-          ]
-        }
-      ]
-    },
-    {
-      "nom": "Naruto",
-      "productes": [
-        {
-          "nom": "Naruto",
-          "videoUrl": "/imatges/naruto/naruto/video.webm",
-          "imatges": [
-            "/imatges/naruto/naruto/1.webp",
-            "/imatges/naruto/naruto/2.webp",
-            "/imatges/naruto/naruto/3.webp",
-            "/imatges/naruto/naruto/4.webp",
-            "/imatges/naruto/naruto/5.webp",
-            "/imatges/naruto/naruto/6.webp"
-          ]
-        }
-      ]
-    },
-    {
-      "nom": "Super Mario (Crochet)",
-      "productes": [
-        {
-          "nom": "Super Mario",
-          "videoUrl": "/imatges/supermario/mario/video.webm",
-          "imatges": [
-            "/imatges/supermario/mario/1.webp",
-            "/imatges/supermario/mario/2.webp",
-            "/imatges/supermario/mario/3.webp",
-            "/imatges/supermario/mario/4.webp",
-            "/imatges/supermario/mario/5.webp"
-          ]
-        },
-        {
-          "nom": "Super Mario (Normal)",
-          "videoUrl": "/imatges/supermario/marion/video.webm",
-          "imatges": [
-            "/imatges/supermario/marion/1.webp",
-            "/imatges/supermario/marion/2.webp",
-            "/imatges/supermario/marion/3.webp",
-            "/imatges/supermario/marion/4.webp",
-            "/imatges/supermario/marion/5.webp",
-            "/imatges/supermario/marion/6.webp"
-          ]
-        },
-        {
-          "nom": "Luigi (Crochet)",
-          "videoUrl": "/imatges/supermario/luigi/video.webm",
-          "imatges": [
-            "/imatges/supermario/luigi/1.webp",
-            "/imatges/supermario/luigi/2.webp",
-            "/imatges/supermario/luigi/3.webp",
-            "/imatges/supermario/luigi/4.webp"
-          ]
-        },
-        {
-          "nom": "Luigi (Normal)",
-          "videoUrl": "/imatges/supermario/luigin/video.webm",
-          "imatges": [
-            "/imatges/supermario/luigin/1.webp",
-            "/imatges/supermario/luigin/2.webp",
-            "/imatges/supermario/luigin/3.webp",
-            "/imatges/supermario/luigin/4.webp"
-          ]
-        },
-        {
-          "nom": "Yoshi (Crochet)",
-          "videoUrl": "/imatges/supermario/yoshi/video.webm",
-          "imatges": [
-            "/imatges/supermario/yoshi/1.webp",
-            "/imatges/supermario/yoshi/2.webp",
-            "/imatges/supermario/yoshi/3.webp",
-            "/imatges/supermario/yoshi/4.webp"
-          ]
-        },
-        {
-          "nom": "Yoshi (Normal)",
-          "videoUrl": "/imatges/supermario/yoshin/video.webm",
-          "imatges": [
-            "/imatges/supermario/yoshin/1.webp",
-            "/imatges/supermario/yoshin/2.webp",
-            "/imatges/supermario/yoshin/3.webp",
-            "/imatges/supermario/yoshin/4.webp"
-          ]
-        }
-      ]
-    },
-    {
-      "nom": "Labubu FanArt",
-      "productes": [
-        {
-          "nom": "Luffy",
-          "videoUrl": "/imatges/labubu/luffy/video.webm",
-          "imatges": [
-            "/imatges/labubu/luffy/1.webp",
-            "/imatges/labubu/luffy/2.webp",
-            "/imatges/labubu/luffy/3.webp"
-          ]
-        }
-      ]
-    },
-    {
-      "nom": "Sonic",
-      "productes": [
-        {
-          "nom": "Sonic",
-          "videoUrl": null,
-          "imatges": [
-            "/imatges/sonic/sonic/1.webp",
-            "/imatges/sonic/sonic/2.webp",
-            "/imatges/sonic/sonic/3.webp",
-            "/imatges/sonic/sonic/4.webp"
-          ]
-        },
-        {
-          "nom": "Shadow",
-          "videoUrl": "/imatges/sonic/shadow/video.webm",
-          "imatges": [
-            "/imatges/sonic/shadow/1.webp",
-            "/imatges/sonic/shadow/2.webp",
-            "/imatges/sonic/shadow/3.webp",
-            "/imatges/sonic/shadow/4.webp",
-            "/imatges/sonic/shadow/5.webp",
-            "/imatges/sonic/shadow/6.webp",
-            "/imatges/sonic/shadow/7.webp",
-            "/imatges/sonic/shadow/8.webp"
-          ]
-        },
-        {
-          "nom": "Silver",
-          "videoUrl": null,
-          "imatges": [
-            "/imatges/sonic/silver/1.webp",
-            "/imatges/sonic/silver/2.webp",
-            "/imatges/sonic/silver/3.webp",
-            "/imatges/sonic/silver/4.webp",
-            "/imatges/sonic/silver/5.webp"
-          ]
-        },
-        {
-          "nom": "Tails",
-          "videoUrl": "/imatges/sonic/tails/video.webm",
-          "imatges": [
-            "/imatges/sonic/tails/1.webp",
-            "/imatges/sonic/tails/2.webp",
-            "/imatges/sonic/tails/3.webp",
-            "/imatges/sonic/tails/4.webp",
-            "/imatges/sonic/tails/5.webp",
-            "/imatges/sonic/tails/6.webp"
-          ]
-        },
-        {
-          "nom": "Dr. Eggman",
-          "videoUrl": "/imatges/sonic/dreggman/video.webm",
-          "imatges": [
-            "/imatges/sonic/dreggman/1.webp",
-            "/imatges/sonic/dreggman/2.webp",
-            "/imatges/sonic/dreggman/3.webp",
-            "/imatges/sonic/dreggman/4.webp"
-          ]
-        },
-        {
-          "nom": "Amy Rose",
-          "videoUrl": "/imatges/sonic/amyrose/video.webm",
-          "imatges": [
-            "/imatges/sonic/amyrose/1.webp",
-            "/imatges/sonic/amyrose/2.webp",
-            "/imatges/sonic/amyrose/3.webp",
-            "/imatges/sonic/amyrose/4.webp",
-            "/imatges/sonic/amyrose/5.webp"
-          ]
-        },
-        {
-          "nom": "Knuckles",
-          "videoUrl": "/imatges/sonic/knuckles/video.webm",
-          "imatges": [
-            "/imatges/sonic/knuckles/1.webp",
-            "/imatges/sonic/knuckles/2.webp",
-            "/imatges/sonic/knuckles/3.webp",
-            "/imatges/sonic/knuckles/4.webp"
-          ]
-        },
-        {
-          "nom": "Super Sonic",
-          "videoUrl": "/imatges/sonic/supersonic/video.webm",
-          "imatges": [
-            "/imatges/sonic/supersonic/1.webp",
-            "/imatges/sonic/supersonic/2.webp",
-            "/imatges/sonic/supersonic/3.webp",
-            "/imatges/sonic/supersonic/4.webp"
-          ]
-        }
-      ]
-    }
-    ,
-    {
-      "nom": "Bluey",
-      "productes": [
-        {
-          "nom": "Bluey (Crochet)",
-          "videoUrl": null,
-          "imatges": [
-            "/imatges/bluey/blueycrochet/0.webp",
-            "/imatges/bluey/blueycrochet/1.webp",
-            "/imatges/bluey/blueycrochet/2.webp",
-            "/imatges/bluey/blueycrochet/3.webp",
-            "/imatges/bluey/blueycrochet/4.webp"
-          ]
-        },
-        {
-          "nom": "Bluey (Normal)",
-          "videoUrl": "/imatges/bluey/blueynormal/video.webm",
-          "imatges": [
-            "/imatges/bluey/blueynormal/1.webp",
-            "/imatges/bluey/blueynormal/2.webp",
-            "/imatges/bluey/blueynormal/3.webp",
-            "/imatges/bluey/blueynormal/4.webp",
-            "/imatges/bluey/blueynormal/5.webp"
-          ]
-        },
-        {
-          "nom": "Bingo (Crochet)",
-          "videoUrl": "/imatges/bluey/bingocrochet/video.webm",
-          "imatges": [
-            "/imatges/bluey/bingocrochet/1.webp",
-            "/imatges/bluey/bingocrochet/2.webp",
-            "/imatges/bluey/bingocrochet/3.webp",
-            "/imatges/bluey/bingocrochet/4.webp",
-            "/imatges/bluey/bingocrochet/5.webp"
-          ]
-        },
-        {
-          "nom": "Bingo (Normal)",
-          "videoUrl": "/imatges/bluey/bingonormal/video.webm",
-          "imatges": [
-            "/imatges/bluey/bingonormal/1.webp",
-            "/imatges/bluey/bingonormal/2.webp",
-            "/imatges/bluey/bingonormal/3.webp",
-            "/imatges/bluey/bingonormal/4.webp",
-            "/imatges/bluey/bingonormal/5.webp"
-          ]
-        }
-      ]
-    },
-    {
-      "nom": "Toothless",
-      "productes": [
-        {
-          "nom": "Toothless",
-          "videoUrl": "/imatges/toothless/toothless/video.webm",
-          "imatges": [
-            "/imatges/toothless/toothless/1.webp",
-            "/imatges/toothless/toothless/2.webp",
-            "/imatges/toothless/toothless/3.webp",
-            "/imatges/toothless/toothless/4.webp"
-          ]
-        }
-      ]
-    },
-    {
-      "nom": "Brainrot",
-      "productes": [
-        {
-          "nom": "Tung Tung Tung Sahur",
-          "videoUrl": "/imatges/brainrot/tungtungtungsahur/video.webm",
-          "imatges": [
-            "/imatges/brainrot/tungtungtungsahur/1.webp",
-            "/imatges/brainrot/tungtungtungsahur/2.webp",
-            "/imatges/brainrot/tungtungtungsahur/3.webp"
-          ]
-        }
-      ]
-    },
-    {
-      "productes": [
-        {
-          "nom": "Derpy Tiger",
-          "videoUrl": "/imatges/kpopdemonhunters/derpytiger/video.webm",
-          "imatges": [
-            "/imatges/kpopdemonhunters/derpytiger/1.webp",
-            "/imatges/kpopdemonhunters/derpytiger/2.webp",
-            "/imatges/kpopdemonhunters/derpytiger/3.webp",
-            "/imatges/kpopdemonhunters/derpytiger/4.webp",
-            "/imatges/kpopdemonhunters/derpytiger/5.webp"
-          ]
-        },
-        {
-          "nom": "Sussy Bird",
-          "videoUrl": "/imatges/kpopdemonhunters/sussybird/video.webm",
-          "imatges": [
-            "/imatges/kpopdemonhunters/sussybird/1.webp",
-            "/imatges/kpopdemonhunters/sussybird/2.webp",
-            "/imatges/kpopdemonhunters/sussybird/3.webp",
-            "/imatges/kpopdemonhunters/sussybird/4.webp"
-          ]
-        }
-      ]
-    },
-    {
-      "nom": "Monstruos S.A.",
-      "productes": [
-        {
-          "nom": "Mike Wazowski",
-          "videoUrl": "/imatges/monstruossa/mikewazowski/video.webm",
-          "imatges": [
-            "/imatges/monstruossa/mikewazowski/1.webp",
-            "/imatges/monstruossa/mikewazowski/2.webp",
-            "/imatges/monstruossa/mikewazowski/3.webp",
-            "/imatges/monstruossa/mikewazowski/4.webp"
-          ]
-        },
-        {
-          "nom": "Sulley",
-          "videoUrl": "/imatges/monstruossa/sulley/video.webm",
-          "imatges": [
-            "/imatges/monstruossa/sulley/0.webp",
-            "/imatges/monstruossa/sulley/1.webp",
-            "/imatges/monstruossa/sulley/2.webp",
-            "/imatges/monstruossa/sulley/3.webp",
-            "/imatges/monstruossa/sulley/4.webp",
-            "/imatges/monstruossa/sulley/5.webp"
-          ]
-        }
-      ]
-    }
-  ]
+    ]
 }
