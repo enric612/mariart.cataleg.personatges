@@ -79,17 +79,20 @@
                         right: '2rem',
                         bottom: '2rem',
                         zIndex: 100,
-                        background: '#E1306C',
-                        borderRadius: '50%',
                         width: '64px',
                         height: '64px',
                         display: 'flex',
                         alignItems: 'center',
                         justifyContent: 'center',
-                        boxShadow: '0 4px 16px rgba(0,0,0,0.15)'
+                        boxShadow: '0 4px 16px rgba(0,0,0,0.15)',
+                        background: 'transparent',
+                        borderRadius: '16px',
+                        transition: 'transform 0.2s',
                     }}
+                    onMouseOver={e => e.currentTarget.style.transform = 'scale(1.12)'}
+                    onMouseOut={e => e.currentTarget.style.transform = 'scale(1)'}
                 >
-                    <img src="/imatges/instagram.webp" alt="Instagram" style={{ width: '32px', height: '32px', objectFit: 'contain' }} />
+                    <img src="/imatges/instagram.webp" alt="Instagram" style={{ width: '48px', height: '48px', objectFit: 'contain' }} />
                 </a>
             );
         }
@@ -104,19 +107,22 @@
                     style={{
                         position: 'fixed',
                         right: '2rem',
-                        bottom: '8.5rem', // 2rem + 64px + 10px separació
+                        bottom: '8.5rem',
                         zIndex: 100,
-                        background: '#25D366',
-                        borderRadius: '50%',
                         width: '64px',
                         height: '64px',
                         display: 'flex',
                         alignItems: 'center',
                         justifyContent: 'center',
-                        boxShadow: '0 4px 16px rgba(0,0,0,0.15)'
+                        boxShadow: '0 4px 16px rgba(0,0,0,0.15)',
+                        background: 'transparent',
+                        borderRadius: '16px',
+                        transition: 'transform 0.2s',
                     }}
+                    onMouseOver={e => e.currentTarget.style.transform = 'scale(1.12)'}
+                    onMouseOut={e => e.currentTarget.style.transform = 'scale(1)'}
                 >
-                    <img src="/imatges/whatsapp.webp" alt="WhatsApp" style={{ width: '32px', height: '32px', objectFit: 'contain' }} />
+                    <img src="/imatges/whatsapp.webp" alt="WhatsApp" style={{ width: '48px', height: '48px', objectFit: 'contain' }} />
                 </a>
             );
         }
