@@ -425,11 +425,11 @@
         function LlistatCategories({ categories, onCategoriaClick }) {
             useEffect(() => { document.title = "Catàleg de Personatges MariArT"; }, []);
 
-            const [showScrollBtn, setShowScrollBtn] = React.useState(false);
 
+            const [showScrollBtn, setShowScrollBtn] = React.useState(false);
             React.useEffect(() => {
                 const handleScroll = () => {
-                    setShowScrollBtn(window.scrollY > 100);
+                    setShowScrollBtn(window.scrollY > 50);
                 };
                 window.addEventListener('scroll', handleScroll);
                 return () => window.removeEventListener('scroll', handleScroll);
@@ -440,15 +440,24 @@
                     <header className="text-center py-12 px-4">
                         <h1 className="text-5xl md:text-6xl font-extrabold text-text-principal">Catálogo de personajes de MariArT</h1>
                         <p className="text-xl text-text-secundari mt-4 max-w-2xl mx-auto">Selecciona una categoria para explorar nuestros diseños.</p>
+                        {showScrollBtn && (
+                            <button
+                                className="mt-6 px-6 py-3 bg-accent text-white font-bold rounded-2xl shadow-md hover:bg-accent-hover transition-all duration-300"
+                                onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                                title="Subir arriba"
+                            >
+                                ⬆ Subir arriba
+                            </button>
+                        )}
                     </header>
                     {showScrollBtn && (
                         <button
                             style={{position: 'fixed', right: '2rem', bottom: '2rem', zIndex: 50}}
                             className="px-6 py-3 bg-accent text-white font-bold rounded-2xl shadow-md hover:bg-accent-hover transition-all duration-300"
                             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-                            title="Torna al principi"
+                            title="Subir arriba"
                         >
-                            ⬆ Voler arriba
+                            ⬆ Subir arriba
                         </button>
                     )}
                     <div className="container mx-auto px-4 sm:px-8">
