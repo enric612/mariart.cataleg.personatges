@@ -240,7 +240,7 @@
           ]
         },
         {
-          "nom": "Sanji",
+          "nom": "Sanji (2 Opciones)",
           "videoUrl": "/imatges/onepiece/sanji/video.webm",
           "imatges": [
             "/imatges/onepiece/sanji/1.webp",
@@ -393,7 +393,55 @@
     },
     {
       "nom": "Sonic",
-      "productes": []
+      "productes": [
+        {
+          "nom": "Sonic",
+          "videoUrl": null,
+          "imatges": [
+            "/imatges/sonic/sonic/1.webp",
+            "/imatges/sonic/sonic/2.webp",
+            "/imatges/sonic/sonic/3.webp",
+            "/imatges/sonic/sonic/4.webp"
+          ]
+        },
+        {
+          "nom": "Shadow",
+          "videoUrl": "/imatges/sonic/shadow/video.webm",
+          "imatges": [
+            "/imatges/sonic/shadow/1.webp",
+            "/imatges/sonic/shadow/2.webp",
+            "/imatges/sonic/shadow/3.webp",
+            "/imatges/sonic/shadow/4.webp",
+            "/imatges/sonic/shadow/5.webp",
+            "/imatges/sonic/shadow/6.webp",
+            "/imatges/sonic/shadow/7.webp",
+            "/imatges/sonic/shadow/8.webp"
+          ]
+        },
+        {
+          "nom": "Silver",
+          "videoUrl": null,
+          "imatges": [
+            "/imatges/sonic/silver/1.webp",
+            "/imatges/sonic/silver/2.webp",
+            "/imatges/sonic/silver/3.webp",
+            "/imatges/sonic/silver/4.webp",
+            "/imatges/sonic/silver/5.webp"
+          ]
+        },
+        {
+          "nom": "Tails",
+          "videoUrl": "/imatges/sonic/tails/video.webm",
+          "imatges": [
+            "/imatges/sonic/tails/1.webp",
+            "/imatges/sonic/tails/2.webp",
+            "/imatges/sonic/tails/3.webp",
+            "/imatges/sonic/tails/4.webp",
+            "/imatges/sonic/tails/5.webp",
+            "/imatges/sonic/tails/6.webp"
+          ]
+        }
+      ]
     }
   ]
 }
