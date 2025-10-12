@@ -131,30 +131,32 @@
                     >
                         <img src="/imatges/whatsapp.webp" alt="WhatsApp" style={iconStyle} />
                     </a>
-                    {showScrollBtn && (vista === 'productes' || vista === 'detall') && (
+                    {showScrollBtn && (
                         <>
-                            <button
-                                onClick={onBack}
-                                title="Tornar al llistat anterior"
-                                style={{
-                                    marginRight: '0.7rem',
-                                    width: '56px',
-                                    height: '56px',
-                                    display: 'flex',
-                                    alignItems: 'center',
-                                    justifyContent: 'center',
-                                    background: 'transparent',
-                                    border: 'none',
-                                    borderRadius: '16px',
-                                    boxShadow: '0 4px 16px rgba(0,0,0,0.15)',
-                                    cursor: 'pointer',
-                                    transition: 'transform 0.2s',
-                                }}
-                                onMouseOver={e => e.currentTarget.style.transform = 'scale(1.12)'}
-                                onMouseOut={e => e.currentTarget.style.transform = 'scale(1)'}
-                            >
-                                <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="#B48369" viewBox="0 0 24 24"><path d="M4 12l8-7v4h8v6h-8v4z"/></svg>
-                            </button>
+                            {(vista === 'productes' || vista === 'detall') && (
+                                <button
+                                    onClick={onBack}
+                                    title="Tornar al llistat anterior"
+                                    style={{
+                                        marginRight: '0.7rem',
+                                        width: '56px',
+                                        height: '56px',
+                                        display: 'flex',
+                                        alignItems: 'center',
+                                        justifyContent: 'center',
+                                        background: 'transparent',
+                                        border: 'none',
+                                        borderRadius: '16px',
+                                        boxShadow: '0 4px 16px rgba(0,0,0,0.15)',
+                                        cursor: 'pointer',
+                                        transition: 'transform 0.2s',
+                                    }}
+                                    onMouseOver={e => e.currentTarget.style.transform = 'scale(1.12)'}
+                                    onMouseOut={e => e.currentTarget.style.transform = 'scale(1)'}
+                                >
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="#B48369" viewBox="0 0 24 24"><path d="M4 12l8-7v4h8v6h-8v4z"/></svg>
+                                </button>
+                            )}
                             <button
                                 onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
                                 title="Subir arriba"
@@ -390,61 +392,108 @@
 
 
         // --- Component Principal de l'Aplicació ---
+        function Loader() {
+            return (
+                <div style={{
+                    position: 'fixed',
+                    top: 0,
+                    left: 0,
+                    width: '100vw',
+                    height: '100vh',
+                    background: 'rgba(245,239,230,0.85)',
+                    zIndex: 9999,
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                }}>
+                    <div style={{
+                        width: '64px',
+                        height: '64px',
+                        border: '8px solid #E8DFCA',
+                        borderTop: '8px solid #B48369',
+                        borderRadius: '50%',
+                        animation: 'spin 1s linear infinite',
+                    }} />
+                    <style>{`@keyframes spin { 0% { transform: rotate(0deg);} 100% { transform: rotate(360deg);} }`}</style>
+                </div>
+            );
+        }
+
         function App() {
             // Estats de navegació: 'categories', 'productes', 'detall'
             const [vista, setVista] = useState('categories');
             const [categoriaSeleccionada, setCategoriaSeleccionada] = useState(null);
             const [producteSeleccionat, setProducteSeleccionat] = useState(null);
             const [categoryData, setCategoryData] = useState({ categories: [] });
+            const [loading, setLoading] = useState(true);
             useEffect(() => {
+                setLoading(true);
                 fetch('categories.json')
                     .then(res => res.json())
-                    .then(data => setCategoryData(data));
+                    .then(data => {
+                        setCategoryData(data);
+                        setLoading(false);
+                    });
             }, []);
             const categories = categoryData.categories;
 
             const handleCategoriaClick = (categoria) => {
-                setCategoriaSeleccionada(categoria);
-                setVista('productes');
+                setLoading(true);
+                setTimeout(() => {
+                    setCategoriaSeleccionada(categoria);
+                    setVista('productes');
+                    setLoading(false);
+                }, 350);
             };
 
             const handleProducteClick = (producte) => {
-                setProducteSeleccionat(producte);
-                setVista('detall');
+                setLoading(true);
+                setTimeout(() => {
+                    setProducteSeleccionat(producte);
+                    setVista('detall');
+                    setLoading(false);
+                }, 350);
             };
 
             const handleTornaAlLlistatDeProductes = () => {
-                setProducteSeleccionat(null);
-                setVista('productes');
-                window.scrollTo({ top: 0, behavior: 'smooth' });
+                setLoading(true);
+                setTimeout(() => {
+                    setProducteSeleccionat(null);
+                    setVista('productes');
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                    setLoading(false);
+                }, 350);
             };
 
             const handleTornaAlLlistatDeCategories = () => {
-                setCategoriaSeleccionada(null);
-                setProducteSeleccionat(null);
-                setVista('categories');
-                window.scrollTo({ top: 0, behavior: 'smooth' });
+                setLoading(true);
+                setTimeout(() => {
+                    setCategoriaSeleccionada(null);
+                    setProducteSeleccionat(null);
+                    setVista('categories');
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                    setLoading(false);
+                }, 350);
             };
 
             let content;
 
             if (vista === 'detall' && producteSeleccionat) {
-                // IMPORTANT: Passem també el nom de la categoria per al botó de "Tornar"
-                content = <VistaDetall producte={producteSeleccionat} onTorna={handleTornaAlLlistatDeProductes} categoriaNom={categoriaSeleccionada.nom} />;
+                content = <VistaDetall producte={producteSeleccionat} onTorna={handleTornaAlLlistatDeProductes} categoriaNom={categoriaSeleccionada?.nom} />;
             } else if (vista === 'productes' && categoriaSeleccionada) {
                 content = <LlistatProductesPerCategoria categoria={categoriaSeleccionada} onProducteClick={handleProducteClick} onTorna={handleTornaAlLlistatDeCategories} />;
             } else {
                 content = <LlistatCategories categories={categories} onCategoriaClick={handleCategoriaClick} />;
             }
 
-            // Passa la vista i el handler de tornar al FloatingSocialButtons
             window._floatingSocialButtonsProps = {
                 vista,
                 onBack: vista === 'detall' ? handleTornaAlLlistatDeProductes : handleTornaAlLlistatDeCategories
             };
             return (
                 <div>
-                    {content}
+                    {loading && <Loader />}
+                    {!loading && content}
                     <FloatingSocialButtons />
                     <footer className="text-center py-8 mt-10">
                         <p className="text-text-secundari">&copy; {new Date().getFullYear()} MariArT</p>
