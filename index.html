@@ -380,7 +380,10 @@
         // --- Component del Llistat de Productes (NIVELL 2) ---
         // ----------------------------------------------------------------------
         function LlistatProductesPerCategoria({ categoria, onProducteClick, onTorna }) {
-            useEffect(() => { document.title = `Catàleg - ${categoria.nom}`; }, [categoria]);
+            useEffect(() => {
+                document.title = `Catálogo - ${categoria.nom}`;
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }, [categoria]);
 
             return (
                 <main className="fade-in">
