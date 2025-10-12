@@ -390,12 +390,14 @@
             const handleTornaAlLlistatDeProductes = () => {
                 setProducteSeleccionat(null);
                 setVista('productes');
+                window.scrollTo({ top: 0, behavior: 'smooth' });
             };
 
             const handleTornaAlLlistatDeCategories = () => {
                 setCategoriaSeleccionada(null);
                 setProducteSeleccionat(null);
                 setVista('categories');
+                window.scrollTo({ top: 0, behavior: 'smooth' });
             };
 
             let content;
