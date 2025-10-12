@@ -533,6 +533,35 @@
           ]
         }
       ]
+    },
+    {
+      "nom": "Toothless",
+      "productes": [
+        {
+          "nom": "Toothless",
+          "videoUrl": "/imatges/toothless/toothless/video.webm",
+          "imatges": [
+            "/imatges/toothless/toothless/1.webp",
+            "/imatges/toothless/toothless/2.webp",
+            "/imatges/toothless/toothless/3.webp",
+            "/imatges/toothless/toothless/4.webp"
+          ]
+        }
+      ]
+    },
+    {
+      "nom": "Brainrot",
+      "productes": [
+        {
+          "nom": "Tung Tung Tung Sahur",
+          "videoUrl": "/imatges/brainrot/tungtungtungsahur/video.webm",
+          "imatges": [
+            "/imatges/brainrot/tungtungtungsahur/1.webp",
+            "/imatges/brainrot/tungtungtungsahur/2.webp",
+            "/imatges/brainrot/tungtungtungsahur/3.webp"
+          ]
+        }
+      ]
     }
   ]
 }
