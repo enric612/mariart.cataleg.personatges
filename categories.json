@@ -6,6 +6,7 @@
                 {
                     "nom": "Harry Potter",
                     "videoUrl": "/imatges/HP/HP/video.webm",
+                    "destacat": true,
                     "imatges": [
                         "/imatges/HP/HP/1.webp",
                         "/imatges/HP/HP/2.webp",
@@ -23,6 +24,7 @@
                 {
                     "nom": "Lilo",
                     "videoUrl": "/imatges/lilostitch/lilo/video.webm",
+                    "destacat": true,
                     "imatges": [
                         "/imatges/lilostitch/lilo/1.webp",
                         "/imatges/lilostitch/lilo/2.webp",
@@ -133,6 +135,7 @@
                 {
                     "nom": "Goku",
                     "videoUrl": null,
+                    "destacat": true,
                     "imatges": [
                         "/imatges/bdd/goku/1.webp",
                         "/imatges/bdd/goku/2.webp",
@@ -199,6 +202,7 @@
                 {
                     "nom": "Luffy",
                     "videoUrl": "/imatges/onepiece/luffy/video.webm",
+                    "destacat": true,
                     "imatges": [
                         "/imatges/onepiece/luffy/1.webp",
                         "/imatges/onepiece/luffy/2.webp",
