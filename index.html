@@ -1,10 +1,13 @@
+
 <!DOCTYPE html>
 <html lang="ca">
-                }
-
-                return (
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Catálogo de Personajes MariArT</title>
+
+    <!-- Fonts to resemble mariartnatural.es -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Montserrat:wght@300;500;700&display=swap" rel="stylesheet">
 
     <script src="https://cdn.tailwindcss.com"></script>
 
@@ -12,6 +15,7 @@
     <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
 
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="navbar-scroll.js"></script>
 
     <script>
         // Configuració personalitzada per a Tailwind CSS
@@ -56,6 +60,144 @@
         .image-placeholder {
             @apply absolute inset-0 bg-targeta/50 animate-pulse; /* Placeholder visible durant la càrrega */
         }
+    </style>
+
+    <!-- Plain CSS fallback so the banner and placeholders are visible without Tailwind @apply -->
+    <style>
+        /* Image container and placeholder (fallback for @apply) */
+        .image-container { position: relative; width: 100%; height: 20rem; }
+        .image-placeholder { position: absolute; inset: 0; background: #E8DFCA; opacity: 0.6; }
+
+    /* Banner styles (plain CSS) */
+    .banner-wrap{position:relative;width:100%;overflow:hidden;height:600px;max-height:600px}
+    /* Slide wrapper (each slide is absolute and holds an img + overlay) */
+    .banner-slide{position:absolute;left:0;top:0;width:100%;height:100%;transition:opacity .6s ease,transform .6s ease}
+    .banner-slide img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center center;
+        display: block;
+        margin: 0;
+        box-shadow: 0 4px 24px rgba(0,0,0,0.12);
+        border-radius: 0;
+        background: rgba(255,255,255,0.12);
+        transition: box-shadow 0.3s;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: none;
+    }
+    .banner-inner{position:relative;width:100%;height:100%}
+    /* overlay gradient at bottom for caption readability */
+    .banner-overlay{position:absolute;left:0;right:0;bottom:0;height:45%;background:linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.45) 60%, rgba(0,0,0,0.6) 100%);pointer-events:none}
+    .banner-caption{position:absolute;left:6%;bottom:28px;color:white;text-align:left;pointer-events:auto;z-index:3;max-width:60%}
+    .banner-caption h3{margin:0;font-size:clamp(20px,3.2vw,34px);font-weight:700;letter-spacing:0.2px;font-family:'Playfair Display',serif}
+    .banner-caption .banner-sub{font-size:13px;opacity:0.95;margin-top:6px;font-family:'Montserrat',sans-serif}
+    .banner-cta{display:inline-block;margin-top:8px;padding:8px 14px;border-radius:999px;background:rgba(255,255,255,0.95);color:#2b2b2b;font-weight:600;text-decoration:none}
+
+    /* Link styling for product name in banner */
+    .banner-caption a.banner-link{
+        color: inherit;
+        text-decoration: none; /* no underline per user preference */
+        cursor: pointer;
+        pointer-events: auto;
+        display: inline-block;
+    }
+    .banner-caption a.banner-link:hover{ opacity: 0.95; color: #FFD24D; }
+    .banner-arrows{position:absolute;top:50%;left:0;right:0;display:flex;justify-content:space-between;transform:translateY(-50%);pointer-events:none;padding:0 12px}
+    .banner-arrow{pointer-events:auto;background:rgba(255,255,255,0.95);border-radius:999px;padding:8px 12px;margin:8px;color:#333;border:none;box-shadow:0 6px 18px rgba(0,0,0,0.18);cursor:pointer}
+    .banner-dots{position:absolute;left:50%;transform:translateX(-50%);bottom:14px;display:flex;gap:10px}
+    .banner-dot{width:12px;height:12px;border-radius:999px;background:rgba(255,255,255,0.7);cursor:pointer;box-shadow:0 2px 6px rgba(0,0,0,0.12)}
+    .banner-dot.active{background:rgba(255,255,255,1);transform:scale(1.05)}
+    /* Ensure banner sits above other content */
+    .banner-wrap { z-index: 1; }
+    /* Hero title positioned above the banner (overlay) */
+    .site-hero{
+        position: absolute;
+        top: 20px;
+        left: 6%;
+        z-index: 60; /* sits above the banner which has z-index:1 */
+        pointer-events: none; /* clickable elements remain under it */
+    }
+    .site-hero h1{
+        font-family:'Playfair Display', serif;
+        font-size: clamp(28px, 4.5vw, 64px);
+        color: #FFD24D; /* yellow text */
+        background: none; /* remove yellow box */
+        padding: 0;
+        margin: 0;
+        display: inline;
+        font-weight: 700;
+        text-shadow: 0 2px 6px rgba(0,0,0,0.22);
+        pointer-events: auto;
+    }
+    html, body { background: #F5EFE6; color: #785A48; }
+    body{font-family:'Montserrat',sans-serif}
+    /* Top navigation bar styles (plain CSS) */
+    .site-navbar{
+        --navbar-height: 96px;
+        --navbar-gap: 8px; /* small gap between navbar and content when solid */
+        height: var(--navbar-height);
+        position:fixed;
+        top:0;
+        left:0;
+        width:100%;
+        z-index:70; /* above hero overlay */
+        background: transparent; /* start transparent over the hero */
+        transition: background 0.28s ease, box-shadow 0.28s ease, backdrop-filter 0.28s ease;
+        backdrop-filter: blur(4px);
+        padding: 8px 0;
+        pointer-events: auto;
+    }
+    /* When scrolled or hovered, make navbar solid white */
+    .site-navbar.scrolled, .site-navbar:hover{
+        background: #ffffff;
+        box-shadow: 0 6px 24px rgba(0,0,0,0.08);
+    }
+    /* When the navbar is in 'solid' mode (non-home), make it part of the document flow
+       so it does not overlay page content and always appears white. */
+    .site-navbar.solid{
+        /* keep fixed but make visually solid; body will receive padding so content isn't hidden */
+        position: fixed;
+        background: #ffffff;
+        box-shadow: 0 6px 24px rgba(0,0,0,0.06);
+        z-index: 90;
+    }
+    .site-navbar.solid .navbar-title, .site-navbar.solid .navbar-link{ color: #332100; }
+
+    /* Use only #app-content margin to offset content below the fixed navbar (avoid double offsets) */
+    body.nav-solid #app-content { margin-top: calc(var(--navbar-height) + var(--navbar-gap)); }
+
+    /* Hide the overlayed site hero when the navbar is solid so it doesn't block headers or back buttons */
+    body.nav-solid .site-hero{ display: none !important; }
+
+    /* Responsive: slightly smaller navbar on small screens */
+    @media (max-width: 640px){
+        .site-navbar{ --navbar-height: 64px; }
+        body.nav-solid{ padding-top: calc(var(--navbar-height) + var(--navbar-gap)); }
+    }
+    .navbar-content{
+        max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:6px 24px;
+    }
+    .navbar-title{
+        font-family:'Playfair Display',serif;font-weight:700;font-size:clamp(20px,3.6vw,44px);color:#FFD24D;text-decoration:none;display:inline-block;pointer-events:auto;transition:color 0.2s ease;line-height:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:78%;
+    }
+    .site-navbar.solid .navbar-title{ font-size: clamp(16px,2.8vw,28px); }
+    /* On white background use dark title */
+    .site-navbar.scrolled .navbar-title, .site-navbar:hover .navbar-title{ color: #332100; }
+    .navbar-link{ font-family:'Montserrat',sans-serif;color:#fff;text-decoration:none;margin-left:16px;padding:6px 12px;border-radius:8px;transition:color 0.18s, background 0.18s; }
+    /* When navbar becomes white, links should be dark */
+    .site-navbar.scrolled .navbar-link, .site-navbar:hover .navbar-link{ color:#332100; }
+    .navbar-link:hover{ background: rgba(255,210,77,0.12); }
+    /* Fixed back button used on product detail views */
+    .fixed-back-btn{
+        width:48px;height:48px;border-radius:12px;background:#B48369;border:none;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 24px rgba(0,0,0,0.12);cursor:pointer;position:fixed;left:18px;bottom:18px;z-index:120;color:#fff
+    }
+    .fixed-back-btn:hover{ transform:translateY(-2px); }
+    .top-back-link{
+        position:fixed;top:calc(var(--navbar-height) + 12px);left:18px;z-index:115;background:#fff;padding:8px 12px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.08);color:#332100;text-decoration:none;font-weight:600}
+    .top-back-link:hover{ transform:translateY(-2px); }
     </style>
 </head>
 
@@ -202,7 +344,7 @@
                         className={`${className} ${loaded ? 'opacity-100' : 'opacity-0'} transition-opacity duration-700`}
                         loading={loading}
                         onLoad={() => setLoaded(true)}
-                        style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}
+                        style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 30%' }}
                     />
                 </div>
             );
@@ -229,6 +371,9 @@
                             Volver a {producte.categoriaNom}
                         </button>
                     </header>
+                        <a onClick={(e)=>{e.preventDefault(); onTorna();}} href="#" className="top-back-link">
+                            Volver a {producte.categoriaNom || 'categorías'}
+                        </a>
 
                     <div className="bg-white p-4 sm:p-6 rounded-3xl shadow-lg mb-8">
 
@@ -362,7 +507,7 @@
             return (
                 <main className="fade-in">
                     <header className="text-center py-12 px-4">
-                        <h1 className="text-5xl md:text-6xl font-extrabold text-text-principal">Catálogo de personajes de MariArT</h1>
+                        { /* Main title removed here because site-hero is now overlayed above the banner */ }
                         <p className="text-xl text-text-secundari mt-4 max-w-2xl mx-auto">Selecciona una categoria para explorar nuestros diseños.</p>
                     </header>
                     <div className="container mx-auto px-4 sm:px-8">
@@ -426,16 +571,67 @@
             const [producteSeleccionat, setProducteSeleccionat] = useState(null);
             const [categoryData, setCategoryData] = useState({ categories: [] });
             const [loading, setLoading] = useState(true);
-            useEffect(() => {
+            const [loadError, setLoadError] = useState(false);
+
+            // fetch with error handling and retry support
+            function fetchCategories(){
                 setLoading(true);
+                setLoadError(false);
                 fetch('categories.json')
-                    .then(res => res.json())
+                    .then(res => {
+                        if(!res.ok) throw new Error('HTTP ' + res.status);
+                        return res.json();
+                    })
                     .then(data => {
-                        setCategoryData(data);
-                        setLoading(false);
-                    });
+                        setCategoryData(data || { categories: [] });
+                    })
+                    .catch(err => {
+                        console.error('Failed to load categories.json', err);
+                        setCategoryData({ categories: [] });
+                        setLoadError(true);
+                    })
+                    .finally(() => setLoading(false));
+            }
+
+            useEffect(() => {
+                fetchCategories();
             }, []);
             const categories = categoryData.categories;
+
+            // Ensure the page receives top padding when the navbar should be solid (non-home)
+            React.useEffect(() => {
+                if(typeof document !== 'undefined'){
+                    if(vista !== 'categories'){
+                        document.body.classList.add('nav-solid');
+                    } else {
+                        document.body.classList.remove('nav-solid');
+                    }
+                }
+                return () => {};
+            }, [vista]);
+
+            // Measure the navbar height and update CSS variable so offsets are accurate
+            React.useEffect(() => {
+                function updateNavbarHeight(){
+                    try{
+                        const nav = document.getElementById('site-navbar');
+                        if(nav){
+                            let h = nav.getBoundingClientRect().height || 72;
+                            // add a small buffer so content won't be flush under the bar
+                            h = Math.ceil(h) + 8;
+                            // clamp to a sensible range to avoid huge offsets
+                            const minH = 56, maxH = 140;
+                            const capped = Math.max(minH, Math.min(h, maxH));
+                            document.documentElement.style.setProperty('--navbar-height', `${capped}px`);
+                        }
+                    }catch(e){ console.warn(e); }
+                }
+                updateNavbarHeight();
+                window.addEventListener('resize', updateNavbarHeight);
+                // also update after a short delay in case fonts or rendering change
+                const t = setTimeout(updateNavbarHeight, 350);
+                return () => { window.removeEventListener('resize', updateNavbarHeight); clearTimeout(t); };
+            }, [vista, loading]);
 
             const handleCategoriaClick = (categoria) => {
                 setLoading(true);
@@ -449,7 +645,9 @@
             const handleProducteClick = (producte) => {
                 setLoading(true);
                 setTimeout(() => {
-                    setProducteSeleccionat(producte);
+                    // ensure the product carries the category name so the detail view can show "Volver a [categoria]"
+                    const withCategory = { ...producte, categoriaNom: (categoriaSeleccionada && categoriaSeleccionada.nom) || producte.categoriaNom || '' };
+                    setProducteSeleccionat(withCategory);
                     setVista('detall');
                     setLoading(false);
                 }, 350);
@@ -514,20 +712,21 @@
 
                     return (
                     <section className="w-full">
-                        <style>{`
-                        .banner-wrap{position:relative;width:100%;overflow:hidden}
-                        .banner-slide{width:100%;height:60vh;max-height:520px;object-fit:cover;transition:opacity .6s ease,transform .6s ease}
-                        .banner-inner{position:relative;width:100%;height:100%}
-                        .banner-arrows{position:absolute;top:50%;left:0;right:0;display:flex;justify-content:space-between;transform:translateY(-50%);pointer-events:none}
-                        .banner-arrow{pointer-events:auto;background:rgba(0,0,0,0.35);border-radius:10px;padding:8px;margin:8px;color:white}
-                        .banner-dots{position:absolute;left:50%;transform:translateX(-50%);bottom:12px;display:flex;gap:8px}
-                        .banner-dot{width:10px;height:10px;border-radius:999px;background:rgba(255,255,255,0.6);cursor:pointer}
-                        .banner-dot.active{background:rgba(255,255,255,1);box-shadow:0 0 0 4px rgba(0,0,0,0.08) inset}
-                        `}</style>
                         <div className="banner-wrap" onTouchStart={onTouchStart} onTouchEnd={onTouchEnd}>
                             <div className="banner-inner">
                                 {items.map((it, i) => (
-                                    <img key={i} src={it.imatge} alt={it.nom} className="banner-slide" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', opacity: i === index ? 1 : 0, transform: `translateX(${(i - index) * 6}%)` }} loading="lazy" />
+                                    <div key={i} className="banner-slide" style={{ opacity: i === index ? 1 : 0, transform: `translateX(${(i - index) * 6}%)`, pointerEvents: i === index ? 'auto' : 'none' }}>
+                                        <img src={it.imatge} alt={it.nom} loading="lazy" />
+                                        <div className="banner-overlay" />
+                                        <div className="banner-caption">
+                                            <h3>
+                                                <a href="#" className="banner-link" aria-label={`Veure ${it.nom}`} onClick={(e)=>{ e.preventDefault(); console.log('banner link clicked:', it); try{ if(window._appApi && window._appApi.openProduct){ window._appApi.openProduct(it); } else if(window._openProduct){ window._openProduct(it); } }catch(err){ console.warn(err); } }}>
+                                                    {it.nom}
+                                                </a>
+                                            </h3>
+                                            <div className="banner-sub">{it.categoria}</div>
+                                        </div>
+                                    </div>
                                 ))}
                                 <div className="banner-arrows">
                                     <button aria-label="Anterior" className="banner-arrow" onClick={prev}>&lt;</button>
@@ -550,14 +749,16 @@
                 content = <LlistatProductesPerCategoria categoria={categoriaSeleccionada} onProducteClick={handleProducteClick} onTorna={handleTornaAlLlistatDeCategories} />;
             } else {
                 // Recopilar productes destacats configurables (camp `destacat: true` a categories.json)
-                const featured = [];
+                let featured = [];
                 categories.forEach(cat => {
                     (cat.productes || []).forEach(prod => {
                         if (prod.destacat) {
-                            featured.push({ nom: prod.nom, imatge: prod.imatges && prod.imatges[0] ? prod.imatges[0] : '/imatges/placeholder.webp' });
+                            featured.push({ nom: prod.nom, imatge: prod.imatges && prod.imatges[0] ? prod.imatges[0] : '/imatges/placeholder.webp', categoria: cat.nom, raw: prod, destacatOrder: prod.destacatOrder ?? 999 });
                         }
                     });
                 });
+                featured = featured.sort((a, b) => (a.destacatOrder ?? 999) - (b.destacatOrder ?? 999));
+                console.log('Featured for banner:', featured);
 
                 content = (
                     <div>
@@ -571,14 +772,53 @@
                 vista,
                 onBack: vista === 'detall' ? handleTornaAlLlistatDeProductes : handleTornaAlLlistatDeCategories
             };
+            // Expose a small API so banner CTA can open products in-app
+            window._appApi = window._appApi || {};
+            window._appApi.openProduct = function(item){
+                // try to find the product in loaded categories
+                for(const cat of categories || []){
+                    const prod = (cat.productes||[]).find(p=>p.nom === item.nom);
+                    if(prod){
+                        setCategoriaSeleccionada(cat);
+                        setProducteSeleccionat({...prod, categoriaNom: cat.nom});
+                        setVista('detall');
+                        return;
+                    }
+                }
+                console.log('Product not found in categories yet:', item);
+            };
+            // global helper so banner CTA can open product inside the React app
+            window._openProduct = function(item){
+                try{
+                    // if the app exposes a navigation API, use it
+                    if(window._appApi && window._appApi.openProduct){
+                        window._appApi.openProduct(item);
+                        return;
+                    }
+                    // fallback: find matching category and product and simulate click by setting state via window (not ideal)
+                    // This will be implemented if needed; for now we just console log
+                    console.log('Open product requested:', item);
+                }catch(e){ console.warn(e); }
+            }
             return (
                 <div>
-                    {loading && <Loader />}
-                    {!loading && content}
-                    <FloatingSocialButtons />
-                    <footer className="text-center py-8 mt-10">
-                        <p className="text-text-secundari">&copy; {new Date().getFullYear()} MariArT</p>
-                    </footer>
+                    {/* Global site navbar - rendered on every view */}
+                    <nav id="site-navbar" className={`site-navbar ${vista === 'categories' ? '' : 'solid'}`}>
+                        <div className="navbar-content">
+                            <a href="#" className="navbar-title" onClick={e => {e.preventDefault(); setCategoriaSeleccionada(null); setProducteSeleccionat(null); setVista('categories'); window.scrollTo({top:0,behavior:'smooth'});}}>
+                                CATÁLOGO DE PERSONAJES
+                            </a>
+                            <a href="#" className="navbar-link" onClick={e => {e.preventDefault(); setCategoriaSeleccionada(null); setProducteSeleccionat(null); setVista('categories'); window.scrollTo({top:0,behavior:'smooth'});}}>Inici</a>
+                        </div>
+                    </nav>
+                    <div id="app-content">
+                        {loading && <Loader />}
+                        {!loading && content}
+                        <FloatingSocialButtons />
+                        <footer className="text-center py-8 mt-10">
+                            <p className="text-text-secundari">&copy; {new Date().getFullYear()} MariArT</p>
+                        </footer>
+                    </div>
                 </div>
             );
         }
@@ -587,6 +827,8 @@
         const root = ReactDOM.createRoot(document.getElementById('root'));
         root.render(<App />);
     </script>
+
+    
 </body>
 
 </html>
