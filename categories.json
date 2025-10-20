@@ -195,6 +195,18 @@
                         "/imatges/bdd/frizern/4.webp"
                     ]
                 }
+                ,
+                {
+                    "nom": "Golden Frizer (Freeza) ",
+                    "videoUrl": "/imatges/bdd/goldenfrizer/video.webm",
+                    "imatges": [
+                        "/imatges/bdd/goldenfrizer/1.webp",
+                        "/imatges/bdd/goldenfrizer/2.webp",
+                        "/imatges/bdd/goldenfrizer/3.webp",
+                        "/imatges/bdd/goldenfrizer/4.webp",
+                        "/imatges/bdd/goldenfrizer/5.webp"
+                    ]
+                }
             ]
         },
         {
@@ -316,13 +328,36 @@
                 {
                     "nom": "Kakashi",
                     "videoUrl": null,
-                    "destacat": true,
-                    "destacatOrder": 1,
+                    
                     "imatges": [
                         "/imatges/naruto/kakashi/1.webp",
                         "/imatges/naruto/kakashi/2.webp",
                         "/imatges/naruto/kakashi/3.webp",
                         "/imatges/naruto/kakashi/4.webp"
+                    ]
+                }
+                ,
+                {
+                    "nom": "Itachi",
+                    "videoUrl": "/imatges/naruto/itachi/video.webm",
+                    "destacat": true,
+                    "destacatOrder": 1,
+                    "imatges": [
+                        "/imatges/naruto/itachi/0.webp",
+                        "/imatges/naruto/itachi/1.webp",
+                        "/imatges/naruto/itachi/2.webp",
+                        "/imatges/naruto/itachi/3.webp",
+                        "/imatges/naruto/itachi/4.webp"
+                    ]
+                },
+                {
+                    "nom": "Sazuke",
+                    "videoUrl": "/imatges/naruto/sazuke/video.webm",
+                    "imatges": [
+                        "/imatges/naruto/sazuke/1.webp",
+                        "/imatges/naruto/sazuke/2.webp",
+                        "/imatges/naruto/sazuke/3.webp",
+                        "/imatges/naruto/sazuke/4.webp"
                     ]
                 }
             ]
@@ -729,6 +764,24 @@
                         "/imatges/monstruossa/sulley/3.webp",
                         "/imatges/monstruossa/sulley/4.webp",
                         "/imatges/monstruossa/sulley/5.webp"
+                    ]
+                }
+            ]
+        }
+        ,
+        {
+            "nom": "Jujutsu Kaisen",
+            "productes": [
+                {
+                    "nom": "Gojo Satoru",
+                    "videoUrl": "/imatges/jujutsukaisen/gojosatoru/video.webm",
+                    "destacat": true,
+                    "destacatOrder": 5  ,
+                    "imatges": [
+                        "/imatges/jujutsukaisen/gojosatoru/1.webp",
+                        "/imatges/jujutsukaisen/gojosatoru/2.webp",
+                        "/imatges/jujutsukaisen/gojosatoru/3.webp",
+                        "/imatges/jujutsukaisen/gojosatoru/4.webp"
                     ]
                 }
             ]
