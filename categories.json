@@ -428,6 +428,20 @@
                         "/imatges/supermario/yoshin/4.webp"
                     ]
                 }
+                ,
+                {
+                    "nom": "Bowser",
+                    "videoUrl": "/imatges/supermario/bowser/video.webm",
+                    "imatges": [
+                        "/imatges/supermario/bowser/1.webp",
+                        "/imatges/supermario/bowser/2.webp",
+                        "/imatges/supermario/bowser/3.webp",
+                        "/imatges/supermario/bowser/4.webp",
+                        "/imatges/supermario/bowser/5.webp",
+                        "/imatges/supermario/bowser/6.webp",
+                        "/imatges/supermario/bowser/7.webp"
+                    ]
+                }
             ]
         },
         {
@@ -540,6 +554,18 @@
                                 "/imatges/pokemon/eevee/3.webp",
                                 "/imatges/pokemon/eevee/4.webp",
                                 "/imatges/pokemon/eevee/5.webp"
+                            ]
+                        }
+                        ,
+                        {
+                            "nom": "Pikachu (Crochet)",
+                            "videoUrl": "/imatges/pokemon/pikachucrochet/video.webm",
+                            "imatges": [
+                                "/imatges/pokemon/pikachucrochet/1.webp",
+                                "/imatges/pokemon/pikachucrochet/2.webp",
+                                "/imatges/pokemon/pikachucrochet/3.webp",
+                                "/imatges/pokemon/pikachucrochet/4.webp",
+                                "/imatges/pokemon/pikachucrochet/5.webp"
                             ]
                         }
                     ]
@@ -782,6 +808,24 @@
                         "/imatges/jujutsukaisen/gojosatoru/2.webp",
                         "/imatges/jujutsukaisen/gojosatoru/3.webp",
                         "/imatges/jujutsukaisen/gojosatoru/4.webp"
+                    ]
+                }
+            ]
+        }
+        ,
+        {
+            "nom": "Snoopy",
+            "productes": [
+                {
+                    "nom": "Snoopy",
+                    "videoUrl": "/imatges/snoopy/snoopy/video.webm",
+                    "imatges": [
+                        "/imatges/snoopy/snoopy/1.webp",
+                        "/imatges/snoopy/snoopy/2.webp",
+                        "/imatges/snoopy/snoopy/3.webp",
+                        "/imatges/snoopy/snoopy/4.webp",
+                        "/imatges/snoopy/snoopy/5.webp",
+                        "/imatges/snoopy/snoopy/6.webp"
                     ]
                 }
             ]
